@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="BuildAndTest" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <!-- Capture OSGroup passed to command line for setting default FilterToOSGroup value below -->
     <_OriginalOSGroup>$(OSGroup)</_OriginalOSGroup>
@@ -42,9 +42,7 @@
     </Project>
     <!-- signing must happen before packaging -->
     <Project Include="src\sign.builds" />
-    <Project Include="src\packages.builds" Condition="'$(BuildPackages)'=='true'">
-      <InputOSGroup>$(InputOSGroup)</InputOSGroup>
-    </Project>
+    <Project Include="src\packages.builds" Condition="'$(BuildPackages)'=='true'"/>
     <Project Include="src\post.builds">
       <!-- For the root traversal default filter the OSGroup to the OSEnvironment which is the OS we are running on -->
       <FilterToOSGroup Condition="'$(_OriginalOSGroup)' == ''">$(OSEnvironment)</FilterToOSGroup>
@@ -61,14 +59,7 @@
     <TraversalBuildDependsOn>
       ValidateAllProjectDependencies;
       BatchRestorePackages;
-      ValidateExactRestore;
       CreateOrUpdateCurrentVersionFile;
-      $(TraversalBuildDependsOn);
-    </TraversalBuildDependsOn>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(BuildTestsAgainstPackages)' == 'true'">
-    <TraversalBuildDependsOn>
-      BatchGenerateTestProjectJsons;
       $(TraversalBuildDependsOn);
     </TraversalBuildDependsOn>
   </PropertyGroup>
@@ -85,21 +76,7 @@
           CustomErrorRegularExpression="(^Unable to locate .*)|(^Updating the invalid lock file with .*)"
           ContinueOnError="ErrorAndContinue" />
 
-    <!-- Given we ErrorAndContinue we need to propagate the error if the overall task failed -->
-    <Error Condition="'$(MSBuildLastTaskResult)'=='false'" />
-    
     <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Restoring all packages...Done." />
-  </Target>
-
-  <!-- Evaluate our test projects (in src\tests.builds) -->
-  <Target Name="BatchGenerateTestProjectJsons"
-          Condition="'$(BuildTestsAgainstPackages)' == 'true'" 
-          DependsOnTargets="FilterProjects"
-          BeforeTargets="RestorePackages">
-      <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Generating Test project.json's..." />
-      <MSBuild Targets="GenerateAllTestProjectJsons"
-               Projects="src\tests.builds" />
-      <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Generating Test project.json's...done" />
   </Target>
 
   <!-- Task from buildtools that validates dependencies contained in project.json files. -->
@@ -119,14 +96,6 @@
                                        UpdateInvalidDependencies="true" />
   </Target>
 
-  <!-- Task from buildtools that uses lockfiles to validate that packages restored are exactly what were specified. -->
-  <UsingTask TaskName="ValidateExactRestore" AssemblyFile="$(BuildToolsTaskDir)Microsoft.DotNet.Build.Tasks.dll" />
-
-  <Target Name="ValidateExactRestore"
-          Condition="'$(AllowInexactRestore)'!='true'">
-    <ValidateExactRestore ProjectLockJsons="@(ProjectJsonFiles->'%(RootDir)%(Directory)%(Filename).lock.json')" />
-  </Target>
-
   <!-- Tasks from buildtools for easy project.json dependency updates -->
   <UsingTask TaskName="UpdatePackageDependencyVersion" AssemblyFile="$(BuildToolsTaskDir)Microsoft.DotNet.Build.Tasks.dll" />
 
@@ -140,12 +109,9 @@
   <!-- Override RestorePackages from dir.traversal.targets and do a batch restore -->
   <Target Name="RestorePackages" DependsOnTargets="BatchRestorePackages" />
 
-  <!-- Override CleanAllProjects from dir.traversal.targets and just remove the full BinDir -->
-  <Target Name="CleanAllProjects">
+  <!-- Override clean from dir.traversal.targets and just remove the full BinDir -->
+  <Target Name="Clean">
     <RemoveDir Directories="$(BinDir)" />
   </Target>
-
-  <!-- Hook that can be used to insert custom build tasks to the build process such as setup and/or cleanup tasks -->
-  <Import Project="build.override.targets" Condition="Exists('build.override.targets')" />
 
 </Project>

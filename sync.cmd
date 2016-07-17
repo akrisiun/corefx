@@ -1,6 +1,8 @@
 @if "%_echo%" neq "on" echo off
 setlocal EnableDelayedExpansion
 
+choco install -y cmake
+
 set synclog=sync.log
 echo Running Sync.cmd %* > %synclog%
 

@@ -11,34 +11,32 @@ working_tree_root="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 build_packages_log=$working_tree_root/build-packages.log
 binclashlog=$working_tree_root/binclash.log
 binclashloggerdll=$working_tree_root/Tools/Microsoft.DotNet.Build.Tasks.dll
-RuntimeOS=ubuntu.14.04
+RuntimeOS=ubuntu.$VERSION_ID
 
 # Use uname to determine what the OS is.
 OSName=$(uname -s)
 case $OSName in
     Darwin)
-        # Darwin version can be three sets of digits (e.g. 10.10.3), we want just the first one
-        DarwinVersion=$(sw_vers -productVersion | awk 'match($0, /[0-9]+/) { print substr($0, RSTART, RLENGTH) }')
+        # Darwin version can be three sets of digits (e.g. 10.10.3), we want just the first two
+        DarwinVersion=$(sw_vers -productVersion | awk 'match($0, /[0-9]{2}\.[0-9]{2}/) { print substr($0, RSTART, RLENGTH) }')
         RuntimeOS=osx.$DarwinVersion
         ;;
 
     FreeBSD|NetBSD)
         # TODO this doesn't seem correct
-        RuntimeOS=osx.10
+        RuntimeOS=osx.10.10
         ;;
 
     Linux)
-        if [ ! -e /etc/os-release ]; then
-            echo "Cannot determine Linux distribution, assuming Ubuntu 14.04"
+        source /etc/os-release
+        if [ "$ID" == "rhel" ]; then
+            RuntimeOS=rhel.$VERSION_ID
+        elif [ "$ID" == "debian" ]; then
+            RuntimeOS=debian.$VERSION_ID
+        elif [ "$ID" == "ubuntu" ]; then
+            RuntimeOS=ubuntu.$VERSION_ID
         else
-            source /etc/os-release
-            # for some distros we only need the version major number
-            VersionMajor=$(echo $VERSION_ID | awk 'match($0, /[0-9]+/) { print substr($0, RSTART, RLENGTH) }')
-            if [ "$ID" == "rhel" ]; then
-                RuntimeOS=$ID.$VersionMajor
-            else
-                RuntimeOS=$ID.$VERSION_ID
-            fi
+            echo "Unsupported Linux distribution '$ID' detected. Configuring as if for Ubuntu."
         fi
         ;;
 
@@ -60,8 +58,8 @@ fi
 echo "Running init-tools.sh"
 $working_tree_root/init-tools.sh
 
-echo -e "\n$working_tree_root/Tools/dotnetcli/dotnet $working_tree_root/Tools/MSBuild.exe $working_tree_root/src/packages.builds $options $allargs" >> $build_packages_log
-$working_tree_root/Tools/dotnetcli/dotnet $working_tree_root/Tools/MSBuild.exe $working_tree_root/src/packages.builds $options $allargs
+echo -e "\n$working_tree_root/Tools/corerun $working_tree_root/Tools/MSBuild.exe $working_tree_root/src/packages.builds $options $allargs" >> $build_packages_log
+$working_tree_root/Tools/corerun $working_tree_root/Tools/MSBuild.exe $working_tree_root/src/packages.builds $options $allargs
 
 
 if [ $? -ne 0 ]; then

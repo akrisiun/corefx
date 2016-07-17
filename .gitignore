@@ -3,7 +3,7 @@ syntax: glob
 ### VisualStudio ###
 
 # Tool Runtime Dir
-/[Tt]ools/
+# [Tt]ools/
 
 # User-specific files
 *.suo
@@ -261,9 +261,10 @@ Session.vim
 .netrwhist
 *~
 
-# Visual Studio Code
-.vscode/
-
-# Private test configuration and binaries.
-config.ps1
 **/IISApplications
+src.data/
+src.*/
+*.zip
+.arch/
+Tools/_._
+_._

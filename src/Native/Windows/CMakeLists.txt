@@ -20,9 +20,9 @@ SET (CMAKE_INCLUDE_CURRENT_DIR              ON)
 SET (CMAKE_SHARED_LIBRARY_PREFIX            "")
   
 # Force an out of source build
-if("${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_BINARY_DIR}")
-    message(FATAL_ERROR "Binary directory isn't being correctly set before calling Cmake. Tree must be built in separate directory from source.")
-endif()
+# if("${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_BINARY_DIR}")
+#    #message(FATAL_ERROR "Binary directory isn't being correctly set before calling Cmake. Tree must be built in separate directory from source.")
+# endif()
 
 project(CoreFX)
 string(TOUPPER $ENV{CMAKE_BUILD_TYPE} UPPERCASE_CMAKE_BUILD_TYPE)

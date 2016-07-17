@@ -20,8 +20,8 @@ elseif (CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
     include_directories(SYSTEM /usr/local/include)
 elseif (CMAKE_SYSTEM_NAME STREQUAL NetBSD)
     set(PAL_UNIX_NAME \"NETBSD\")
-else ()
-    message(FATAL_ERROR "Unknown platform.  Cannot define PAL_UNIX_NAME, used by RuntimeInformation.")
+#else ()
+#    message(FATAL_ERROR "Unknown platform.  Cannot define PAL_UNIX_NAME, used by RuntimeInformation.")
 endif ()
 
 # in_pktinfo: Find whether this struct exists

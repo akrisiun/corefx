@@ -2,11 +2,11 @@
 
 usage()
 {
-    echo "Usage: $0 [managed] [native] [BuildArch] [BuildType] [clean] [verbose] [clangx.y] [platform] [cross] [skiptests] [staticLibLink] [cmakeargs] [makeargs]"
+    echo "Usage: $0 [managed] [native] [BuildArch] [BuildType] [clean] [verbose] [clangx.y] [platform] [cross] [skiptests] [cmakeargs]"
     echo "managed - optional argument to build the managed code"
     echo "native - optional argument to build the native code"
     echo "The following arguments affect native builds only:"
-    echo "BuildArch can be: x64, x86, arm, arm-softfp, arm64"
+    echo "BuildArch can be: x64, x86, arm, arm64"
     echo "BuildType can be: debug, release"
     echo "clean - optional argument to force a clean build."
     echo "verbose - optional argument to enable verbose build output."
@@ -15,8 +15,6 @@ usage()
     echo "cross - optional argument to signify cross compilation,"
     echo "      - will use ROOTFS_DIR environment variable if set."
     echo "skiptests - skip the tests in the './bin/*/*Tests/' subdirectory."
-    echo "staticLibLink - Optional argument to statically link any native library."
-    echo "generateversion - if building native only, pass this in to get a version on the build output."
     echo "cmakeargs - user-settable additional arguments passed to CMake."
     exit 1
 }
@@ -56,6 +54,30 @@ check_native_prereqs()
 
 prepare_managed_build()
 {
+    # Pull NuGet.exe down if we don't have it already
+    if [ ! -e "$__nugetpath" ]; then
+        which curl wget > /dev/null 2> /dev/null
+        if [ $? -ne 0 -a $? -ne 1 ]; then
+            echo "cURL or wget is required to build corefx. Please see https://github.com/dotnet/corefx/blob/master/Documentation/building/unix-instructions.md for more details."
+            exit 1
+        fi
+        echo "Restoring NuGet.exe..."
+
+        # curl has HTTPS CA trust-issues less often than wget, so lets try that first.
+        which curl > /dev/null 2> /dev/null
+        if [ $? -ne 0 ]; then
+           mkdir -p $__packageroot
+           wget -q -O $__nugetpath https://api.nuget.org/downloads/nuget.exe
+        else
+           curl -sSL --create-dirs -o $__nugetpath https://api.nuget.org/downloads/nuget.exe
+        fi
+
+        if [ $? -ne 0 ]; then
+            echo "Failed to restore NuGet.exe."
+            exit 1
+        fi
+    fi
+
     # Run Init-Tools to restore BuildTools and ToolRuntime
     $__scriptpath/init-tools.sh
 }
@@ -75,27 +97,6 @@ prepare_native_build()
     if [ $__VerboseBuild == 1 ]; then
         export VERBOSE=1
     fi
-
-    # If managed build is supported, then generate version
-    if [ $__buildmanaged == true ]; then
-        __generateversionsource=true
-    fi
-
-    # Ensure tools are present if we will generate version.c
-    if [ $__generateversionsource == true ]; then
-        $__scriptpath/init-tools.sh
-    fi
-
-    # Generate version.c if specified, else have an empty one.
-    __versionSourceFile=$__scriptpath/bin/obj/version.c
-    if [ ! -e "${__versionSourceFile}" ]; then
-        if [ $__generateversionsource == true ]; then
-            $__scriptpath/Tools/dotnetcli/dotnet $__scriptpath/Tools/MSBuild.exe "$__scriptpath/build.proj" /t:GenerateVersionSourceFile /p:GenerateVersionSourceFile=true /v:minimal
-        else
-            __versionSourceLine="static char sccsid[] __attribute__((used)) = \"@(#)No version information produced\";"
-            echo $__versionSourceLine > $__versionSourceFile
-        fi
-    fi
 }
 
 build_managed()
@@ -105,7 +106,7 @@ build_managed()
     __binclashlog=$__scriptpath/binclash.log
     __binclashloggerdll=$__scriptpath/Tools/Microsoft.DotNet.Build.Tasks.dll
 
-    $__scriptpath/Tools/dotnetcli/dotnet $__scriptpath/Tools/MSBuild.exe "$__buildproj" /m /nologo /verbosity:minimal "/flp:Verbosity=normal;LogFile=$__buildlog" "/flp2:warningsonly;logfile=$__scriptpath/msbuild.wrn" "/flp3:errorsonly;logfile=$__scriptpath/msbuild.err" "/l:BinClashLogger,$__binclashloggerdll;LogFile=$__binclashlog" /p:ConfigurationGroup=$__BuildType /p:TargetOS=$__BuildOS /p:OSGroup=$__BuildOS /p:SkipTests=$__SkipTests /p:COMPUTERNAME=$(hostname) /p:USERNAME=$(id -un) /p:TestNugetRuntimeId=$__TestNugetRuntimeId $__UnprocessedBuildArgs
+    $__scriptpath/Tools/corerun $__scriptpath/Tools/MSBuild.exe "$__buildproj" /m /nologo /verbosity:minimal "/fileloggerparameters:Verbosity=normal;LogFile=$__buildlog" "/l:BinClashLogger,$__binclashloggerdll;LogFile=$__binclashlog" /t:Build /p:ConfigurationGroup=$__BuildType /p:OSGroup=$__BuildOS /p:SkipTests=$__SkipTests /p:COMPUTERNAME=$(hostname) /p:USERNAME=$(id -un) /p:TestNugetRuntimeId=$__TestNugetRuntimeId $__UnprocessedBuildArgs
     BUILDERRORLEVEL=$?
 
     echo
@@ -146,9 +147,9 @@ build_native()
 
     # Build
 
-    echo "Executing make install -j $NumProc $__MakeExtraArgs"
+    echo "Executing make install -j $NumProc"
 
-    make install -j $NumProc $__MakeExtraArgs
+    make install -j $NumProc
     if [ $? != 0 ]; then
         echo "Failed to build corefx native components."
         exit 1
@@ -162,8 +163,12 @@ __scriptpath=$(cd "$(dirname "$0")"; pwd -P)
 __nativeroot=$__scriptpath/src/Native
 __packageroot=$__scriptpath/packages
 __sourceroot=$__scriptpath/src
+__nugetpath=$__packageroot/NuGet.exe
+__nugetconfig=$__sourceroot/NuGet.Config
 __rootbinpath="$__scriptpath/bin"
-__generateversionsource=false
+__msbuildpackageid="Microsoft.Build.Mono.Debug"
+__msbuildpackageversion="14.1.0.0-prerelease"
+__msbuildpath=$__packageroot/$__msbuildpackageid.$__msbuildpackageversion/lib/MSBuild.exe
 __buildmanaged=false
 __buildnative=false
 __TestNugetRuntimeId=win7-x64
@@ -214,12 +219,18 @@ case $OSName in
 
     Linux)
         __HostOS=Linux
-        if [ ! -e /etc/os-release ]; then
-            echo "Cannot determine Linux distribution, assuming Ubuntu 14.04"
+        source /etc/os-release
+        if [ "$ID" == "centos" ]; then
+            __TestNugetRuntimeId=centos.7-x64
+        elif [ "$ID" == "rhel" ]; then
+            __TestNugetRuntimeId=rhel.7-x64
+        elif [ "$ID" == "ubuntu" ]; then
             __TestNugetRuntimeId=ubuntu.14.04-x64
+        elif [ "$ID" == "debian" ]; then
+            __TestNugetRuntimeId=debian.8-x64
         else
-            source /etc/os-release
-            __TestNugetRuntimeId=$ID.$VERSION_ID-$__BuildArch
+            echo "Unsupported Linux distribution '$ID' detected. Configuring as if for Ubuntu."
+            __TestNugetRuntimeId=ubuntu.14.04-x64
         fi
         ;;
 
@@ -239,7 +250,6 @@ __BuildOS=$__HostOS
 __BuildType=Debug
 __CMakeArgs=DEBUG
 __CMakeExtraArgs=""
-__MakeExtraArgs=""
 
 BUILDERRORLEVEL=0
 
@@ -248,7 +258,6 @@ __UnprocessedBuildArgs=
 __CleanBuild=false
 __CrossBuild=0
 __SkipTests=false
-__ServerGC=0
 __VerboseBuild=false
 __ClangMajorVersion=3
 __ClangMinorVersion=5
@@ -260,7 +269,7 @@ while :; do
 
     lowerI="$(echo $1 | awk '{print tolower($0)}')"
     case $lowerI in
-        -\?|-h|--help)
+        -?|-h|--help)
             usage
             exit 1
             ;;
@@ -279,9 +288,6 @@ while :; do
         arm)
             __BuildArch=arm
             ;;
-        arm-softfp)
-            __BuildArch=arm-softfp
-            ;;
         arm64)
             __BuildArch=arm64
             ;;
@@ -298,12 +304,6 @@ while :; do
         verbose)
             __VerboseBuild=1
             ;;
-        staticliblink)
-            __CMakeExtraArgs="$__CMakeExtraArgs -DCMAKE_STATIC_LIB_LINK=1"
-            ;;
-        generateversion)
-            __generateversionsource=true
-            ;;
         clang3.5)
             __ClangMajorVersion=3
             __ClangMinorVersion=5
@@ -315,10 +315,6 @@ while :; do
         clang3.7)
             __ClangMajorVersion=3
             __ClangMinorVersion=7
-            ;;
-        clang3.8)
-            __ClangMajorVersion=3
-            __ClangMinorVersion=8
             ;;
         freebsd)
             __BuildOS=FreeBSD
@@ -352,27 +348,15 @@ while :; do
             ;;
         cmakeargs)
             if [ -n "$2" ]; then
-                __CMakeExtraArgs="$__CMakeExtraArgs $2"
+                __CMakeExtraArgs="$2"
                 shift
             else
                 echo "ERROR: 'cmakeargs' requires a non-empty option argument"
                 exit 1
             fi
             ;;
-        makeargs)
-            if [ -n "$2" ]; then
-                __MakeExtraArgs="$__MakeExtraArgs $2"
-                shift
-            else
-                echo "ERROR: 'makeargs' requires a non-empty option argument"
-                exit 1
-            fi
-            ;;
-        useservergc)
-            __ServerGC=1
-            ;;
         *)
-            __UnprocessedBuildArgs="$__UnprocessedBuildArgs $1"
+          __UnprocessedBuildArgs="$__UnprocessedBuildArgs $1"
     esac
 
     shift
@@ -411,8 +395,6 @@ if [ "$__CrossBuild" == 1 ]; then
         export ROOTFS_DIR="$__scriptpath/cross/rootfs/$__BuildArch"
     fi
 fi
-
-export CORECLR_SERVER_GC="$__ServerGC"
 
 if $__buildnative; then
 
