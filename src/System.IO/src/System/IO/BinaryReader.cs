@@ -102,6 +102,14 @@ namespace System.IO
             Dispose(true);
         }
 
+        /// <remarks>
+        /// Override Dispose(bool) instead of Close(). This API exists for compatibility purposes.
+        /// </remarks>
+        public virtual void Close()
+        {
+            Dispose(true);
+        }
+
         public virtual int PeekChar()
         {
             if (_stream == null)
@@ -413,14 +421,7 @@ namespace System.IO
                 }
 
                 Debug.Assert(byteBuffer != null, "expected byteBuffer to be non-null");
-                unsafe
-                {
-                    fixed (byte* pBytes = byteBuffer)
-                    fixed (char* pChars = buffer)
-                    {
-                        charsRead = _decoder.GetChars(byteBuffer, position, numBytes, buffer, index, false);
-                    }
-                }
+                charsRead = _decoder.GetChars(byteBuffer, position, numBytes, buffer, index, flush: false);
 
                 charsRemaining -= charsRead;
                 index += charsRead;
@@ -510,10 +511,8 @@ namespace System.IO
                 Debug.Assert(charsRead < 2, "InternalReadOneChar - assuming we only got 0 or 1 char, not 2!");
                 //                Console.WriteLine("That became: " + charsRead + " characters.");
             }
-            if (charsRead == 0)
-            {
-                return -1;
-            }
+
+            Debug.Assert(charsRead != 0);
 
             return _singleChar[0];
         }

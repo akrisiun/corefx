@@ -128,5 +128,29 @@ namespace System.Runtime.InteropServices
                 Assert.Equal((byte)i, Marshal.ReadByte(p + i));
             }
         }
+
+        [Fact]
+        public static void GetHRForException()
+        {
+            Exception e = new Exception();
+
+            try
+            {
+                Assert.Equal(0, Marshal.GetHRForException(null));
+                
+                Assert.InRange(Marshal.GetHRForException(e), int.MinValue, -1);            
+                Assert.Equal(e.HResult, Marshal.GetHRForException(e));
+            }
+            finally
+            {
+                // This GetExceptionForHR call is needed to 'eat' the IErrorInfo put to TLS by 
+                // Marshal.GetHRForException call above. Otherwise other Marshal.GetExceptionForHR 
+                // calls would randomly return previous exception objects passed to 
+                // Marshal.GetHRForException.
+                // The correct way is to use Marshal.GetHRForException at interop boundary only, but for the
+                // time being we'll keep this code as-is.
+                Marshal.GetExceptionForHR(e.HResult);
+            }
+        }
     }
 }

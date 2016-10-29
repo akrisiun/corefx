@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Dynamic.Utils;
 using System.Reflection;
 using System.Reflection.Emit;
+using static System.Linq.Expressions.CachedReflectionInfo;
 
 namespace System.Linq.Expressions.Compiler
 {
@@ -93,8 +94,8 @@ namespace System.Linq.Expressions.Compiler
         {
             if (b.IsLifted)
             {
-                ParameterExpression p1 = Expression.Variable(TypeUtils.GetNonNullableType(b.Left.Type), null);
-                ParameterExpression p2 = Expression.Variable(TypeUtils.GetNonNullableType(b.Right.Type), null);
+                ParameterExpression p1 = Expression.Variable(TypeUtils.GetNonNullableType(b.Left.Type), name: null);
+                ParameterExpression p2 = Expression.Variable(TypeUtils.GetNonNullableType(b.Right.Type), name: null);
                 MethodCallExpression mc = Expression.Call(null, b.Method, p1, p2);
                 Type resultType = null;
                 if (b.IsLiftedToNull)
@@ -548,7 +549,7 @@ namespace System.Linq.Expressions.Compiler
                 TypeUtils.GetNonNullableType(leftType),
                 TypeUtils.GetNonNullableType(rightType),
                 TypeUtils.GetNonNullableType(resultType),
-                false
+                liftedToNull: false
             );
 
             if (!liftedToNull)
@@ -558,7 +559,7 @@ namespace System.Linq.Expressions.Compiler
 
             if (!TypeUtils.AreEquivalent(resultType, TypeUtils.GetNonNullableType(resultType)))
             {
-                _ilg.EmitConvertToType(TypeUtils.GetNonNullableType(resultType), resultType, true);
+                _ilg.EmitConvertToType(TypeUtils.GetNonNullableType(resultType), resultType, isChecked: true);
             }
 
             if (liftedToNull)
@@ -631,7 +632,7 @@ namespace System.Linq.Expressions.Compiler
             FreeLocal(locLeft);
             FreeLocal(locRight);
 
-            EmitBinaryOperator(op, TypeUtils.GetNonNullableType(leftType), TypeUtils.GetNonNullableType(rightType), TypeUtils.GetNonNullableType(resultType), false);
+            EmitBinaryOperator(op, TypeUtils.GetNonNullableType(leftType), TypeUtils.GetNonNullableType(rightType), TypeUtils.GetNonNullableType(resultType), liftedToNull: false);
 
             // construct result type
             ConstructorInfo ci = resultType.GetConstructor(new Type[] { TypeUtils.GetNonNullableType(resultType) });
@@ -708,7 +709,7 @@ namespace System.Linq.Expressions.Compiler
             _ilg.Emit(OpCodes.Br_S, labReturnValue);
 
             _ilg.MarkLabel(labReturnValue);
-            ConstructorInfo ci = type.GetConstructor(new Type[] { typeof(bool) });
+            ConstructorInfo ci = type.GetConstructor(ArrayOfType_Bool);
             _ilg.Emit(OpCodes.Newobj, ci);
             _ilg.Emit(OpCodes.Stloc, locLeft);
             _ilg.Emit(OpCodes.Br, labExit);
@@ -781,7 +782,7 @@ namespace System.Linq.Expressions.Compiler
             _ilg.Emit(OpCodes.Br_S, labReturnValue);
 
             _ilg.MarkLabel(labReturnValue);
-            ConstructorInfo ci = type.GetConstructor(new Type[] { typeof(bool) });
+            ConstructorInfo ci = type.GetConstructor(ArrayOfType_Bool);
             _ilg.Emit(OpCodes.Newobj, ci);
             _ilg.Emit(OpCodes.Stloc, locLeft);
             _ilg.Emit(OpCodes.Br, labExit);

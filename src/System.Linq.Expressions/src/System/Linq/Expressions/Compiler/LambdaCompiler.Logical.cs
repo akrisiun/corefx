@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Dynamic.Utils;
 using System.Reflection;
 using System.Reflection.Emit;
+using static System.Linq.Expressions.CachedReflectionInfo;
 
 namespace System.Linq.Expressions.Compiler
 {
@@ -150,7 +151,7 @@ namespace System.Linq.Expressions.Compiler
             {
                 _ilg.Emit(OpCodes.Ldloca, loc);
                 _ilg.EmitGetValueOrDefault(b.Left.Type);
-                _ilg.EmitConvertToType(nnLeftType, b.Type, true);
+                _ilg.EmitConvertToType(nnLeftType, b.Type, isChecked: true);
             }
             else
             {
@@ -164,7 +165,7 @@ namespace System.Linq.Expressions.Compiler
             EmitExpression(b.Right);
             if (!TypeUtils.AreEquivalent(b.Right.Type, b.Type))
             {
-                _ilg.EmitConvertToType(b.Right.Type, b.Type, true);
+                _ilg.EmitConvertToType(b.Right.Type, b.Type, isChecked: true);
             }
             _ilg.MarkLabel(labEnd);
         }
@@ -279,7 +280,7 @@ namespace System.Linq.Expressions.Compiler
             _ilg.Emit(OpCodes.Ldc_I4_0);
             _ilg.Emit(OpCodes.Br_S, labReturnValue);
             _ilg.MarkLabel(labReturnValue);
-            ConstructorInfo ci = type.GetConstructor(new Type[] { typeof(bool) });
+            ConstructorInfo ci = type.GetConstructor(ArrayOfType_Bool);
             _ilg.Emit(OpCodes.Newobj, ci);
             _ilg.Emit(OpCodes.Stloc, locLeft);
             _ilg.Emit(OpCodes.Br, labExit);
@@ -407,7 +408,7 @@ namespace System.Linq.Expressions.Compiler
             _ilg.Emit(OpCodes.Ldc_I4_1);
             _ilg.Emit(OpCodes.Br_S, labReturnValue);
             _ilg.MarkLabel(labReturnValue);
-            ConstructorInfo ci = type.GetConstructor(new Type[] { typeof(bool) });
+            ConstructorInfo ci = type.GetConstructor(ArrayOfType_Bool);
             _ilg.Emit(OpCodes.Newobj, ci);
             _ilg.Emit(OpCodes.Stloc, locLeft);
             _ilg.Emit(OpCodes.Br, labExit);
