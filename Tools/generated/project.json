@@ -1,0 +1,1 @@
+{"dependencies": { "MicroBuild.Core": "0.2.0", "Microsoft.Portable.Targets": "0.1.1-dev", "Microsoft.Net.Compilers": "2.0.0-beta3"},"frameworks": {"netcoreapp1.0": {},"net46": {}}} 
