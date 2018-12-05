@@ -3,7 +3,7 @@
 // See the LICENSE file in the project root for more information.
 
 using System.Collections.Generic;
-using System.Diagnostics;
+using System.Diagnostics.Security; // using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 
 namespace System.Linq.Expressions.Compiler
@@ -53,7 +53,7 @@ namespace System.Linq.Expressions.Compiler
         /// after stack spilling for a lambda expression has taken place. This is used
         /// to detect misuse of the <see cref="Mark"/> and <see cref="Free"/> methods.
         /// </summary>
-        [Conditional("DEBUG")]
+        [System.Diagnostics.Conditional("DEBUG")]
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         private void VerifyTemps() => _tm.VerifyTemps();
 
@@ -213,7 +213,7 @@ namespace System.Linq.Expressions.Compiler
             /// after stack spilling for a lambda expression has taken place. This is used
             /// to detect misuse of the <see cref="Mark"/> and <see cref="Free"/> methods.
             /// </summary>
-            [Conditional("DEBUG")]
+            [System.Diagnostics.Conditional("DEBUG")]
             [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
             internal void VerifyTemps()
             {

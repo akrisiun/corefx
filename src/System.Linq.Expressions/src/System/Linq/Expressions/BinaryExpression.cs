@@ -3,7 +3,7 @@
 // See the LICENSE file in the project root for more information.
 
 using System.Collections.Generic;
-using System.Diagnostics;
+using System.Diagnostics.Security; // using System.Diagnostics;
 using System.Dynamic.Utils;
 using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -14,7 +14,7 @@ namespace System.Linq.Expressions
     /// <summary>
     /// Represents an expression that has a binary operator.
     /// </summary>
-    [DebuggerTypeProxy(typeof(BinaryExpressionProxy))]
+    [System.Diagnostics.DebuggerTypeProxy(typeof(BinaryExpressionProxy))]
     public class BinaryExpression : Expression
     {
         internal BinaryExpression(Expression left, Expression right)
@@ -632,7 +632,7 @@ namespace System.Linq.Expressions
 
         private static BinaryExpression GetMethodBasedBinaryOperator(ExpressionType binaryType, Expression left, Expression right, MethodInfo method, bool liftToNull)
         {
-            System.Diagnostics.Debug.Assert(method != null);
+            System.Diagnostics.Security.Debug.Assert(method != null);
             ValidateOperator(method);
             ParameterInfo[] pms = method.GetParametersCached();
             if (pms.Length != 2)

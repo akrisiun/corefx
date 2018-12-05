@@ -16,6 +16,9 @@ using System.Security.Permissions;
 using System.Xml;
 using Microsoft.Win32;
 
+// using System.Diagnostics;
+using System.Diagnostics.Security;
+
 namespace System.Security.Cryptography.Xml
 {
     public class SignedXml
@@ -586,7 +589,7 @@ namespace System.Security.Cryptography.Xml
                 // If it's null here we want to know about it, because it means that
                 // GetElementById failed to work across the cloning, and our uniqueness
                 // test is invalid.
-                System.Diagnostics.Debug.Assert(cloneElem != null);
+                Debug.Assert(cloneElem != null);
 
                 // Guard against null anyways
                 if (cloneElem != null)
@@ -965,8 +968,8 @@ namespace System.Security.Cryptography.Xml
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         private static bool CryptographicEquals(byte[] a, byte[] b)
         {
-            System.Diagnostics.Debug.Assert(a != null);
-            System.Diagnostics.Debug.Assert(b != null);
+            Debug.Assert(a != null);
+            Debug.Assert(b != null);
 
             int result = 0;
 

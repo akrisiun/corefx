@@ -5,7 +5,9 @@
 using System;
 using System.Buffers;
 using System.Text;
-using System.Diagnostics;
+// using System.Diagnostics;
+using System.Diagnostics.Security;
+
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;

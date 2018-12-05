@@ -4,7 +4,7 @@
 
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
+using System.Diagnostics.Security; // using System.Diagnostics;
 using System.Dynamic.Utils;
 using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -127,7 +127,7 @@ namespace System.Linq.Expressions.Compiler
 
         #region Expressions
 
-        [Conditional("DEBUG")]
+        [System.Diagnostics.Conditional("DEBUG")]
         private static void VerifyRewrite(Result result, Expression node)
         {
             Debug.Assert(result.Node != null);

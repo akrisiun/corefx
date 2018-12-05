@@ -3,7 +3,7 @@
 // See the LICENSE file in the project root for more information.
 
 using System.Collections.Generic;
-using System.Diagnostics;
+using System.Diagnostics.Security; // using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Dynamic.Utils;
 using System.Linq.Expressions;
@@ -15,7 +15,7 @@ namespace System.Dynamic
     /// <summary>
     /// Represents a set of binding restrictions on the <see cref="DynamicMetaObject"/> under which the dynamic binding is valid.
     /// </summary>
-    [DebuggerTypeProxy(typeof(BindingRestrictionsProxy)), DebuggerDisplay("{DebugView}")]
+    [System.Diagnostics.DebuggerTypeProxy(typeof(BindingRestrictionsProxy)), System.Diagnostics.DebuggerDisplay("{DebugView}")]
     public abstract class BindingRestrictions
     {
         /// <summary>

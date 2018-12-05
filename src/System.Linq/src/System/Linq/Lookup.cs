@@ -4,7 +4,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
+using System.Diagnostics.Security; // using System.Diagnostics;
 
 namespace System.Linq
 {
@@ -61,8 +61,8 @@ namespace System.Linq
         bool Contains(TKey key);
     }
 
-    [DebuggerDisplay("Count = {Count}")]
-    [DebuggerTypeProxy(typeof(SystemLinq_LookupDebugView<,>))]
+    [System.Diagnostics.DebuggerDisplay("Count = {Count}")]
+    [System.Diagnostics.DebuggerTypeProxy(typeof(SystemLinq_LookupDebugView<,>))]
     public class Lookup<TKey, TElement> : ILookup<TKey, TElement>, IIListProvider<IGrouping<TKey, TElement>>
     {
         private readonly IEqualityComparer<TKey> _comparer;

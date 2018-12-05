@@ -4,7 +4,7 @@
 
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
+using System.Diagnostics.Security; // using System.Diagnostics;
 using System.Dynamic.Utils;
 
 namespace System.Linq.Expressions
@@ -19,7 +19,7 @@ namespace System.Linq.Expressions
     /// Only one of fault or finally can be supplied.
     /// The return type of the try block must match the return type of any associated catch statements.
     /// </summary>
-    [DebuggerTypeProxy(typeof(TryExpressionProxy))]
+    [System.Diagnostics.DebuggerTypeProxy(typeof(TryExpressionProxy))]
     public sealed class TryExpression : Expression
     {
         internal TryExpression(Type type, Expression body, Expression @finally, Expression fault, ReadOnlyCollection<CatchBlock> handlers)

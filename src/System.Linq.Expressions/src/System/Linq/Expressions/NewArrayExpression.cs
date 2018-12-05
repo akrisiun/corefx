@@ -4,7 +4,7 @@
 
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
+using System.Diagnostics.Security; // using System.Diagnostics;
 using System.Dynamic.Utils;
 using System.Runtime.CompilerServices;
 
@@ -13,7 +13,7 @@ namespace System.Linq.Expressions
     /// <summary>
     /// Represents creating a new array and possibly initializing the elements of the new array.
     /// </summary>
-    [DebuggerTypeProxy(typeof(NewArrayExpressionProxy))]
+    [System.Diagnostics.DebuggerTypeProxy(typeof(NewArrayExpressionProxy))]
     public class NewArrayExpression : Expression
     {
         internal NewArrayExpression(Type type, ReadOnlyCollection<Expression> expressions)

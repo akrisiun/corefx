@@ -1223,8 +1223,10 @@ namespace System.Net
             }
         }
 
-        internal void RequestCallback(object obj)
+        internal override 
+            void RequestCallback(object obj)
         {
+            // base.RequestCallback(obj); -> MethodNotImplementedException;
             if (_async)
                 AsyncRequestCallback(obj);
             else

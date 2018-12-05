@@ -2,7 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System.Diagnostics;
+using System.Diagnostics.Security; // using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Dynamic.Utils;
 using System.Reflection;
@@ -12,7 +12,7 @@ namespace System.Linq.Expressions
     /// <summary>
     /// Represents accessing a field or property.
     /// </summary>
-    [DebuggerTypeProxy(typeof(MemberExpressionProxy))]
+    [System.Diagnostics.DebuggerTypeProxy(typeof(MemberExpressionProxy))]
     public class MemberExpression : Expression
     {
         /// <summary>

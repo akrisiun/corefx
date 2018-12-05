@@ -14,7 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Collections.Concurrent;
 using System.Linq.Parallel;
-using System.Diagnostics;
+using System.Diagnostics.Security; // using System.Diagnostics;
 using System.Threading;
 
 namespace System.Linq.Parallel

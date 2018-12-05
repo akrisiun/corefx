@@ -2,7 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System.Diagnostics;
+using System.Diagnostics.Security; // using System.Diagnostics;
 using System.Dynamic.Utils;
 using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -12,7 +12,7 @@ namespace System.Linq.Expressions
     /// <summary>
     /// Represents an expression that has a unary operator.
     /// </summary>
-    [DebuggerTypeProxy(typeof(UnaryExpressionProxy))]
+    [System.Diagnostics.DebuggerTypeProxy(typeof(UnaryExpressionProxy))]
     public sealed class UnaryExpression : Expression
     {
         internal UnaryExpression(ExpressionType nodeType, Expression expression, Type type, MethodInfo method)

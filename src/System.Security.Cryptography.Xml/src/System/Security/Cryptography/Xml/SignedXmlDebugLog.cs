@@ -4,7 +4,10 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
+using System.ComponentModel;
+// using System.Diagnostics;
+using System.Diagnostics.Security;
+
 using System.Globalization;
 using System.IO;
 using System.Reflection;
@@ -53,7 +56,8 @@ namespace System.Security.Cryptography.Xml
 
         private const string NullString = "(null)";
 
-        private static TraceSource s_traceSource = new TraceSource("System.Security.Cryptography.Xml.SignedXml");
+        private static Diagnostics.TraceSource s_traceSource = new Diagnostics.TraceSource("System.Security.Cryptography.Xml.SignedXml");
+
         private static volatile bool s_haveVerboseLogging;
         private static volatile bool s_verboseLogging;
         private static volatile bool s_haveInformationLogging;
@@ -166,7 +170,7 @@ namespace System.Security.Cryptography.Xml
             {
                 if (!s_haveInformationLogging)
                 {
-                    s_informationLogging = s_traceSource.Switch.ShouldTrace(TraceEventType.Information);
+                    s_informationLogging = s_traceSource.Switch.ShouldTraceInt((int)TraceEventType.Information);
                     s_haveInformationLogging = true;
                 }
 
@@ -183,7 +187,7 @@ namespace System.Security.Cryptography.Xml
             {
                 if (!s_haveVerboseLogging)
                 {
-                    s_verboseLogging = s_traceSource.Switch.ShouldTrace(TraceEventType.Verbose);
+                    s_verboseLogging = s_traceSource.Switch.ShouldTraceInt((int)TraceEventType.Verbose);
                     s_haveVerboseLogging = true;
                 }
 
@@ -1075,7 +1079,7 @@ namespace System.Security.Cryptography.Xml
             Debug.Assert(!string.IsNullOrEmpty(data), "!string.IsNullOrEmpty(data)");
             Debug.Assert(InformationLoggingEnabled, "InformationLoggingEnabled");
 
-            s_traceSource.TraceEvent(eventType,
+            s_traceSource.TraceEventInt((int)eventType,
                                     (int)eventId,
                                     "[{0}, {1}] {2}",
                                     GetObjectId(source),

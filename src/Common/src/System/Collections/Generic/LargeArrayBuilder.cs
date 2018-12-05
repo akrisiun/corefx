@@ -2,7 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System.Diagnostics;
+using System.Diagnostics.Security; // using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
 namespace System.Collections.Generic
@@ -10,7 +10,7 @@ namespace System.Collections.Generic
     /// <summary>
     /// Represents a position within a <see cref="LargeArrayBuilder{T}"/>.
     /// </summary>
-    [DebuggerDisplay("{DebuggerDisplay,nq}")]
+    [System.Diagnostics.DebuggerDisplay("{DebuggerDisplay,nq}")]
     internal readonly struct CopyPosition
     {
         /// <summary>

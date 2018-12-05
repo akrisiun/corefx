@@ -10,7 +10,7 @@
 
 using System.Threading;
 using System.Threading.Tasks;
-using System.Diagnostics;
+using System.Diagnostics.Security; // using System.Diagnostics;
 
 namespace System.Linq.Parallel
 {

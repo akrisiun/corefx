@@ -4,7 +4,7 @@
 
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
+using System.Diagnostics.Security; // using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Dynamic.Utils;
 using System.Reflection;
@@ -19,7 +19,7 @@ namespace System.Linq.Expressions
     /// <remarks>
     /// Lambda expressions take input through parameters and are expected to be fully bound.
     /// </remarks>
-    [DebuggerTypeProxy(typeof(LambdaExpressionProxy))]
+    [System.Diagnostics.DebuggerTypeProxy(typeof(LambdaExpressionProxy))]
     public abstract partial class LambdaExpression : Expression, IParameterProvider
     {
         private readonly Expression _body;

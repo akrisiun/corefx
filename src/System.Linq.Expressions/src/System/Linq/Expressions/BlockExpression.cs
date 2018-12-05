@@ -4,7 +4,7 @@
 
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
+using System.Diagnostics.Security; // using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Dynamic.Utils;
 using System.Threading;
@@ -14,7 +14,7 @@ namespace System.Linq.Expressions
     /// <summary>
     /// Represents a block that contains a sequence of expressions where variables can be defined.
     /// </summary>
-    [DebuggerTypeProxy(typeof(BlockExpressionProxy))]
+    [System.Diagnostics.DebuggerTypeProxy(typeof(BlockExpressionProxy))]
     public class BlockExpression : Expression
     {
         /// <summary>

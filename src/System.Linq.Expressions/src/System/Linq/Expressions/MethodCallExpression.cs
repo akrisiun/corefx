@@ -4,7 +4,7 @@
 
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
+using System.Diagnostics.Security; // using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Dynamic.Utils;
 using System.Reflection;
@@ -14,7 +14,7 @@ namespace System.Linq.Expressions
     /// <summary>
     /// Represents a call to either static or an instance method.
     /// </summary>
-    [DebuggerTypeProxy(typeof(MethodCallExpressionProxy))]
+    [System.Diagnostics.DebuggerTypeProxy(typeof(MethodCallExpressionProxy))]
     public class MethodCallExpression : Expression, IArgumentProvider
     {
         internal MethodCallExpression(MethodInfo method)

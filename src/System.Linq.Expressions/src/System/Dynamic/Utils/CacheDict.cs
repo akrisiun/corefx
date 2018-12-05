@@ -3,7 +3,7 @@
 // See the LICENSE file in the project root for more information.
 
 using System.Threading;
-using System.Diagnostics;
+using System.Diagnostics.Security; // using System.Diagnostics;
 
 namespace System.Dynamic.Utils
 {

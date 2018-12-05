@@ -5,7 +5,9 @@
 using Microsoft.Win32;
 using System;
 using System.Collections;
-using System.Diagnostics;
+// using System.Diagnostics;
+using System.Diagnostics.Security;
+
 using System.Globalization;
 using System.IO;
 using System.Security;
