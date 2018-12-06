@@ -3,7 +3,7 @@
 // See the LICENSE file in the project root for more information.
 
 using System.Collections.Generic;
-using System.Diagnostics;
+using System.Diagnostics.Security; // using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq.Expressions;
 using System.Threading;
@@ -142,7 +142,7 @@ namespace System.Dynamic.Utils
             }
         }
 
-        [Conditional("DEBUG")]
+        [System.Diagnostics.Conditional("DEBUG")]
         public static void AssertLockHeld(object lockObject)
         {
             Debug.Assert(Monitor.IsEntered(lockObject), "Expected lock is not held.");

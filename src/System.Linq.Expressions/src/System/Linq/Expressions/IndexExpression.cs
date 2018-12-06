@@ -4,7 +4,7 @@
 
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
+using System.Diagnostics.Security; // using System.Diagnostics;
 using System.Dynamic.Utils;
 using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -15,7 +15,7 @@ namespace System.Linq.Expressions
     /// <summary>
     /// Represents indexing a property or array.
     /// </summary>
-    [DebuggerTypeProxy(typeof(IndexExpressionProxy))]
+    [System.Diagnostics.DebuggerTypeProxy(typeof(IndexExpressionProxy))]
     public sealed class IndexExpression : Expression, IArgumentProvider
     {
         private IReadOnlyList<Expression> _arguments;

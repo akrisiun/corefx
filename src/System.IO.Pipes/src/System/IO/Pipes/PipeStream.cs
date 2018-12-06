@@ -3,7 +3,7 @@
 // See the LICENSE file in the project root for more information.
 
 using Microsoft.Win32.SafeHandles;
-using System.Diagnostics;
+using System.Diagnostics.Security; // using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Security;
 using System.Threading;
@@ -333,14 +333,14 @@ namespace System.IO.Pipes
                 throw new ArgumentException(SR.Argument_InvalidOffLen);
         }
 
-        [Conditional("DEBUG")]
+        [System.Diagnostics.Conditional("DEBUG")]
         private static void DebugAssertHandleValid(SafePipeHandle handle)
         {
             Debug.Assert(handle != null, "handle is null");
             Debug.Assert(!handle.IsClosed, "handle is closed");
         }
 
-        [Conditional("DEBUG")]
+        [System.Diagnostics.Conditional("DEBUG")]
         private static void DebugAssertReadWriteArgs(byte[] buffer, int offset, int count, SafePipeHandle handle)
         {
             Debug.Assert(buffer != null, "buffer is null");

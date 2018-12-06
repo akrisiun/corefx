@@ -3,7 +3,7 @@
 // See the LICENSE file in the project root for more information.
 
 using System.ComponentModel;
-using System.Diagnostics;
+using System.Diagnostics.Security; // using System.Diagnostics;
 using System.Linq.Expressions.Compiler;
 
 namespace System.Runtime.CompilerServices
@@ -12,7 +12,7 @@ namespace System.Runtime.CompilerServices
     /// This API supports the .NET Framework infrastructure and is not intended to be used directly from your code.
     /// Contains helper methods called from dynamically generated methods.
     /// </summary>
-    [EditorBrowsable(EditorBrowsableState.Never), DebuggerStepThrough]
+    [EditorBrowsable(EditorBrowsableState.Never), System.Diagnostics.DebuggerStepThrough]
     public static partial class RuntimeOps
     {
         /// <summary>

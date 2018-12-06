@@ -2,7 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System.Diagnostics;
+using System.Diagnostics.Security; // using System.Diagnostics;
 using System.Dynamic.Utils;
 using System.Runtime.CompilerServices;
 using static System.Linq.Expressions.CachedReflectionInfo;
@@ -12,7 +12,7 @@ namespace System.Linq.Expressions
     /// <summary>
     /// Represents an operation between an expression and a type.
     /// </summary>
-    [DebuggerTypeProxy(typeof(TypeBinaryExpressionProxy))]
+    [System.Diagnostics.DebuggerTypeProxy(typeof(TypeBinaryExpressionProxy))]
     public sealed class TypeBinaryExpression : Expression
     {
         internal TypeBinaryExpression(Expression expression, Type typeOperand, ExpressionType nodeType)

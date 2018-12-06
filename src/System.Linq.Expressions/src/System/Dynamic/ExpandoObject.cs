@@ -4,7 +4,7 @@
 
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
+using System.Diagnostics.Security; // using System.Diagnostics;
 using System.Dynamic;
 using System.Dynamic.Utils;
 using System.Linq.Expressions;
@@ -333,7 +333,7 @@ namespace System.Dynamic
                 _collection = collection;
             }
 
-            [DebuggerBrowsable(DebuggerBrowsableState.RootHidden)]
+            [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.RootHidden)]
             public string[] Items
             {
                 get
@@ -345,8 +345,8 @@ namespace System.Dynamic
             }
         }
 
-        [DebuggerTypeProxy(typeof(KeyCollectionDebugView))]
-        [DebuggerDisplay("Count = {Count}")]
+        [System.Diagnostics.DebuggerTypeProxy(typeof(KeyCollectionDebugView))]
+        [System.Diagnostics.DebuggerDisplay("Count = {Count}")]
         private class KeyCollection : ICollection<string>
         {
             private readonly ExpandoObject _expando;
@@ -472,7 +472,7 @@ namespace System.Dynamic
                 _collection = collection;
             }
 
-            [DebuggerBrowsable(DebuggerBrowsableState.RootHidden)]
+            [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.RootHidden)]
             public object[] Items
             {
                 get
@@ -484,8 +484,8 @@ namespace System.Dynamic
             }
         }
 
-        [DebuggerTypeProxy(typeof(ValueCollectionDebugView))]
-        [DebuggerDisplay("Count = {Count}")]
+        [System.Diagnostics.DebuggerTypeProxy(typeof(ValueCollectionDebugView))]
+        [System.Diagnostics.DebuggerDisplay("Count = {Count}")]
         private class ValueCollection : ICollection<object>
         {
             private readonly ExpandoObject _expando;

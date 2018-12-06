@@ -4,7 +4,7 @@
 
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
+using System.Diagnostics.Security; // using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Dynamic.Utils;
 using System.Reflection;
@@ -14,7 +14,7 @@ namespace System.Linq.Expressions
     /// <summary>
     /// Represents an expression that applies a delegate or lambda expression to a list of argument expressions.
     /// </summary>
-    [DebuggerTypeProxy(typeof(InvocationExpressionProxy))]
+    [System.Diagnostics.DebuggerTypeProxy(typeof(InvocationExpressionProxy))]
     public class InvocationExpression : Expression, IArgumentProvider
     {
         internal InvocationExpression(Expression expression, Type returnType)

@@ -3898,8 +3898,9 @@ namespace System.Data.SqlClient
         }
 #endif
 
-        internal void CancelIgnoreFailure()
+        internal new void CancelIgnoreFailure()
         {
+            // base.CancelIgnoreFailure
             // This method is used to route CancellationTokens to the Cancel method.
             // Cancellation is a suggestion, and exceptions should be ignored
             // rather than allowed to be unhandled, as there is no way to route

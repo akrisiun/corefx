@@ -2,7 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System.Diagnostics;
+using System.Diagnostics.Security; // using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
@@ -45,8 +45,8 @@ namespace System.Collections.Generic
     /// the same time. 
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    [DebuggerTypeProxy(typeof(ICollectionDebugView<>))]
-    [DebuggerDisplay("Count = {Count}")]
+    [System.Diagnostics.DebuggerTypeProxy(typeof(ICollectionDebugView<>))]
+    [System.Diagnostics.DebuggerDisplay("Count = {Count}")]
     [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix", Justification = "By design")]
     [Serializable]
 #if !MONO
