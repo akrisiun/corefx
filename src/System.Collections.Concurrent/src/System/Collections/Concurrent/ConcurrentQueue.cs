@@ -2,6 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
+#if MONO
+
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
@@ -18,7 +20,7 @@ namespace System.Collections.Concurrent
     /// concurrently from multiple threads.
     /// </remarks>
     [DebuggerDisplay("Count = {Count}")]
-    [DebuggerTypeProxy(typeof(IProducerConsumerCollectionDebugView<>))]
+    // [DebuggerTypeProxy(typeof(IProducerConsumerCollectionDebugView<>))]
     [Serializable]
     public partial class ConcurrentQueue<T> : IProducerConsumerCollection<T>, IReadOnlyCollection<T>
     {
@@ -176,7 +178,8 @@ namespace System.Collections.Concurrent
         /// cref="ICollection"/>. This property is not supported.
         /// </summary>
         /// <exception cref="NotSupportedException">The SyncRoot property is not supported.</exception>
-        object ICollection.SyncRoot { get { throw new NotSupportedException(SR.ConcurrentCollection_SyncRoot_NotSupported); } }
+        object ICollection.SyncRoot { get { throw new NotSupportedException(
+            "ConcurrentCollection_SyncRoot_NotSupported"); } }
 
         /// <summary>Returns an enumerator that iterates through a collection.</summary>
         /// <returns>An <see cref="IEnumerator"/> that can be used to iterate through the collection.</returns>
@@ -432,7 +435,8 @@ namespace System.Collections.Concurrent
             }
             if (index < 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(index), SR.Collection_CopyTo_ArgumentOutOfRangeException);
+                throw new ArgumentOutOfRangeException(nameof(index), 
+                        "Collection_CopyTo_ArgumentOutOfRangeException");
             }
 
             // Snap for enumeration
@@ -444,7 +448,7 @@ namespace System.Collections.Concurrent
             long count = GetCount(head, headHead, tail, tailTail);
             if (index > array.Length - count)
             {
-                throw new ArgumentException(SR.Collection_CopyTo_TooManyElems);
+                throw new ArgumentException("Collection_CopyTo_TooManyElems");
             }
 
             // Copy the items to the target array
@@ -801,3 +805,6 @@ namespace System.Collections.Concurrent
         }
     }
 }
+
+
+#endif

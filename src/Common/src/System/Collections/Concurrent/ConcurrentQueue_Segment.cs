@@ -2,6 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
+#if MONO
+
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -44,9 +46,11 @@ namespace System.Collections.Concurrent
             /// </param>
             public Segment(int boundedLength)
             {
+#if !MONO
                 // Validate the length
                 Debug.Assert(boundedLength >= 2, $"Must be >= 2, got {boundedLength}");
                 Debug.Assert((boundedLength & (boundedLength - 1)) == 0, $"Must be a power of 2, got {boundedLength}");
+#endif
 
                 // Initialize the slots and the mask.  The mask is used as a way of quickly doing "% _slots.Length",
                 // instead letting us do "& _slotsMask".
@@ -324,6 +328,8 @@ namespace System.Collections.Concurrent
         }
     }
 
+    #if !MONO48
+
     /// <summary>Padded head and tail indices, to avoid false sharing between producers and consumers.</summary>
     [DebuggerDisplay("Head = {Head}, Tail = {Tail}")]
     [StructLayout(LayoutKind.Explicit, Size = 384)] // padding before/between/after fields based on worst case cache line size of 128
@@ -332,4 +338,9 @@ namespace System.Collections.Concurrent
         [FieldOffset(128)] public int Head;
         [FieldOffset(256)] public int Tail;
     }
+
+    #endif
+
 }
+
+#endif
