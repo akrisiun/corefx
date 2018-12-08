@@ -194,6 +194,14 @@ namespace System
             return Number.FormatInt32(m_value, format, provider);
         }
 
+        public unsafe bool TryFormat(ref string destination, out int charsWritten, char* format, IFormatProvider provider)
+        {
+            var s = m_value.ToString(provider);
+            destination = s;
+            charsWritten = s.Length;
+            return true;
+        }
+
         public bool TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format = default, IFormatProvider provider = null)
         {
             return Number.TryFormatInt32(m_value, format, provider, destination, out charsWritten);

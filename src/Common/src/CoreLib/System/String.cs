@@ -33,6 +33,18 @@ namespace System
         [PreserveDependency("System.String.CreateString(System.Char[])")]
         public extern String(char[] value);
 
+
+        public static String Debug2()
+        {
+            DebugMono.IsDebug = true;
+            Debugger.Break();
+
+            var obj = Object.Debug1();
+            var str = new String(new char[] { 'D', 'e', 'b', 'u', 'g', (char)0 }, 0, 5);
+
+            return str;
+        }
+
 #if PROJECTN
         [DependencyReductionRoot]
 #endif
@@ -471,6 +483,14 @@ namespace System
         }
 
         internal ref char GetRawStringData() => ref _firstChar;
+
+        public unsafe char* GetFirstChar()
+        {
+            fixed (char* ret = &_firstChar)
+            {
+                return ret;
+            }
+        }
 
         // Helper for encodings so they can talk to our buffer directly
         // stringLength must be the exact size we'll expect

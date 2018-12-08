@@ -17,7 +17,7 @@ namespace System
 #if !MONO
     [TypeForwardedFrom("mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089")]
 #endif
-    public partial struct Guid : IFormattable, IComparable, IComparable<Guid>, IEquatable<Guid>, ISpanFormattable
+    public partial struct Guid : IFormattable, IComparable, IComparable<Guid>, IEquatable<Guid> //, ISpanFormattable
     {
         public static readonly Guid Empty = new Guid();
 
@@ -260,8 +260,17 @@ namespace System
             }
         }
 
-        public static Guid Parse(string input) =>
-            Parse(input != null ? (ReadOnlySpan<char>)input : throw new ArgumentNullException(nameof(input)));
+        public static Guid Parse(string input) 
+        // =>  Parse(input != null ? (ReadOnlySpan<char>)input : throw new ArgumentNullException(nameof(input)));
+        {
+            GuidResult result = new GuidResult();
+            result.Init(GuidParseThrowStyle.AllButOverflow);
+            if (TryParseGuid(input, GuidStyles.Any, ref result)) {
+                return result._parsedGuid;
+            } else {
+                throw result.GetGuidParseException();
+            }
+        }
 
         public static Guid Parse(ReadOnlySpan<char> input)
         {
@@ -1319,6 +1328,20 @@ namespace System
             return guidString;
         }
 
+        public unsafe bool TryFormat(ref string destination, out int charsWritten, char* format, IFormatProvider provider)
+        {
+            //unsafe
+            //{
+            //    fixed (char* guidChars = &MemoryMarshal.GetReference(destination))
+            //    { }
+            //}
+
+            var s = this.ToString();
+            destination = s;
+            charsWritten = s.Length;
+            return true;
+        }
+
         // Returns whether the guid is successfully formatted as a span. 
         public bool TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format = default)
         {
@@ -1440,7 +1463,8 @@ namespace System
             return true;
         }
 
-        bool ISpanFormattable.TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format, IFormatProvider provider)
+        // ISpanFormattable.
+        public bool TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format, IFormatProvider provider)
         {
             // Like with the IFormattable implementation, provider is ignored.
             return TryFormat(destination, out charsWritten, format);

@@ -97,6 +97,14 @@ namespace System
             return ToString();
         }
 
+        public unsafe bool TryFormat(ref string destination, out int charsWritten, char* format, IFormatProvider provider)
+        {
+            string s = m_value ? TrueLiteral : FalseLiteral;
+            destination = s;
+            charsWritten = s.Length;
+            return true;
+        }
+
         public bool TryFormat(Span<char> destination, out int charsWritten)
         {
             string s = m_value ? TrueLiteral : FalseLiteral;

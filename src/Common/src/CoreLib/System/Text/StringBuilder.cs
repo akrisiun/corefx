@@ -89,6 +89,19 @@ namespace System.Text
             m_ChunkChars = new char[DefaultCapacity];
         }
 
+        public static StringBuilder Debug2()
+        {
+            var b = new StringBuilder();
+
+            DebugMono.IsDebug = true;
+            Debugger.Break();
+
+            var str = new String(new char[] { 'B' }, 0, 1);
+            b.Append(str[0]);
+
+            return b;
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="StringBuilder"/> class.
         /// </summary>
@@ -1515,119 +1528,155 @@ namespace System.Text
                 //
                 Object arg = args[index];
                 String itemFormat = null;
-                ReadOnlySpan<char> itemFormatSpan = default; // used if itemFormat is null
-                // Is current character a colon? which indicates start of formatting parameter.
-                if (ch == ':')
+                string s = null;
+                // ReadOnlySpan<char> itemFormatSpan = default; // used if itemFormat is null
+                unsafe
                 {
-                    pos++;
-                    int startPos = pos;
+                    char* itemFormatSpan = null;
+                    int itemLen = format.Length;
 
-                    while (true)
+                    // Is current character a colon? which indicates start of formatting parameter.
+                    if (ch == ':')
                     {
-                        // If reached end of text then error. (Unexpected end of text)
-                        if (pos == len) FormatError();
-                        ch = format[pos];
                         pos++;
+                        int startPos = pos;
 
-                        // Is character a opening or closing brace?
-                        if (ch == '}' || ch == '{')
+                        while (true)
                         {
-                            if (ch == '{')
+                            // If reached end of text then error. (Unexpected end of text)
+                            if (pos == len)
+                                FormatError();
+                            ch = format[pos];
+                            pos++;
+
+                            // Is character a opening or closing brace?
+                            if (ch == '}' || ch == '{')
                             {
-                                // Yes, is next character also a opening brace, then treat as escaped. eg {{
-                                if (pos < len && format[pos] == '{')
-                                    pos++;
-                                else
-                                    // Error Argument Holes can not be nested.
-                                    FormatError();
-                            }
-                            else
-                            {
-                                // Yes, is next character also a closing brace, then treat as escaped. eg }}
-                                if (pos < len && format[pos] == '}')
-                                    pos++;
+                                if (ch == '{')
+                                {
+                                    // Yes, is next character also a opening brace, then treat as escaped. eg {{
+                                    if (pos < len && format[pos] == '{')
+                                        pos++;
+                                    else
+                                        // Error Argument Holes can not be nested.
+                                        FormatError();
+                                }
                                 else
                                 {
-                                    // No, then treat it as the closing brace of an Arg Hole.
-                                    pos--;
-                                    break;
+                                    // Yes, is next character also a closing brace, then treat as escaped. eg }}
+                                    if (pos < len && format[pos] == '}')
+                                        pos++;
+                                    else
+                                    {
+                                        // No, then treat it as the closing brace of an Arg Hole.
+                                        pos--;
+                                        break;
+                                    }
                                 }
-                            }
 
-                            // Reaching here means the brace has been escaped
-                            // so we need to build up the format string in segments
-                            if (unescapedItemFormat == null)
-                            {
-                                unescapedItemFormat = new StringBuilder();
+                                // Reaching here means the brace has been escaped
+                                // so we need to build up the format string in segments
+                                if (unescapedItemFormat == null)
+                                {
+                                    unescapedItemFormat = new StringBuilder();
+                                }
+                                unescapedItemFormat.Append(format, startPos, pos - startPos - 1);
+                                startPos = pos;
                             }
-                            unescapedItemFormat.Append(format, startPos, pos - startPos - 1);
-                            startPos = pos;
                         }
-                    }
 
-                    if (unescapedItemFormat == null || unescapedItemFormat.Length == 0)
-                    {
-                        if (startPos != pos)
+                        if (unescapedItemFormat == null || unescapedItemFormat.Length == 0)
                         {
-                            // There was no brace escaping, extract the item format as a single string
-                            itemFormatSpan = format.AsSpan(startPos, pos - startPos);
+                            if (startPos != pos)
+                            {
+                                // There was no brace escaping, extract the item format as a single string
+                                itemFormatSpan = format.GetFirstChar() + startPos;
+                                itemLen = pos - startPos;
+                                    // format.AsSpan(startPos, pos - startPos);
+                            }
+                        }
+                        else
+                        {
+                            unescapedItemFormat.Append(format, startPos, pos - startPos);
+                            itemFormat = unescapedItemFormat.ToString();
+                            itemFormatSpan = itemFormat.GetFirstChar();
+                            itemLen = itemFormat.Length;
+
+                            unescapedItemFormat.Clear();
                         }
                     }
-                    else
+                    // If current character is not a closing brace then error. (Unexpected Character)
+                    if (ch != '}')
+                        FormatError();
+                    // Construct the output for this arg hole.
+                    pos++;
+                    s = null;
+                    if (cf != null)
                     {
-                        unescapedItemFormat.Append(format, startPos, pos - startPos);
-                        itemFormatSpan = itemFormat = unescapedItemFormat.ToString();
-                        unescapedItemFormat.Clear();
-                    }
-                }
-                // If current character is not a closing brace then error. (Unexpected Character)
-                if (ch != '}') FormatError();
-                // Construct the output for this arg hole.
-                pos++;
-                String s = null;
-                if (cf != null)
-                {
-                    if (itemFormatSpan.Length != 0 && itemFormat == null)
-                    {
-                        itemFormat = new string(itemFormatSpan);
-                    }
-                    s = cf.Format(itemFormat, arg, provider);
-                }
-
-                if (s == null)
-                {
-                    // If arg is ISpanFormattable and the beginning doesn't need padding,
-                    // try formatting it into the remaining current chunk.
-                    if (arg is ISpanFormattable spanFormattableArg &&
-                        (leftJustify || width == 0) &&
-                        spanFormattableArg.TryFormat(RemainingCurrentChunk, out int charsWritten, itemFormatSpan, provider))
-                    {
-                        m_ChunkLength += charsWritten;
-
-                        // Pad the end, if needed.
-                        int padding = width - charsWritten;
-                        if (leftJustify && padding > 0) Append(' ', padding);
-
-                        // Continue to parse other characters.
-                        continue;
-                    }
-
-                    // Otherwise, fallback to trying IFormattable or calling ToString.
-                    if (arg is IFormattable formattableArg)
-                    {
-                        if (itemFormatSpan.Length != 0 && itemFormat == null)
+                        // itemFormatSpan.Length
+                        if (itemLen != 0 && itemFormat == null)
                         {
                             itemFormat = new string(itemFormatSpan);
                         }
-                        s = formattableArg.ToString(itemFormat, provider);
+                        s = cf.Format(itemFormat, arg, provider);
                     }
-                    else if (arg != null)
+
+                    if (s == null)
                     {
-                        s = arg.ToString();
+                        // If arg is ISpanFormattable and the beginning doesn't need padding,
+                        // try formatting it into the remaining current chunk.
+                        string ref3 = new string(' ', 1024);
+
+                        unsafe
+                        {
+                            var ref2 = RemainingCurrentChunk2();
+                            var len2 = m_ChunkChars.Length - m_ChunkLength;
+                            var dest3 = ref3.GetFirstChar();
+                            for (int ii = 0; ii < len2; ii++)
+                            {
+                                dest3[ii] = (char)ref2[ii];
+                            }
+                            dest3[len2] = (char)0;
+                        }
+
+                        if (arg is ISpanFormattable spanFormattableArg &&
+                            (leftJustify || width == 0) &&
+                            spanFormattableArg.TryFormat(ref ref3, out int charsWritten, itemFormatSpan, provider))
+                        {
+                            m_ChunkLength += charsWritten;
+                            itemFormatSpan = ref3.GetFirstChar();
+                            itemLen = ref3.Length;
+
+                            // Pad the end, if needed.
+                            int padding = width - charsWritten;
+                            if (leftJustify && padding > 0)
+                                Append(' ', padding);
+
+                            // Continue to parse other characters.
+                            continue;
+                        }
+
+                        // Otherwise, fallback to trying IFormattable or calling ToString.
+                        if (arg is IFormattable formattableArg)
+                        {
+                            //  itemFormatSpan.Length 
+                            if (itemLen != 0 && itemFormat == null)
+                            {
+                                itemFormat = new string(itemFormatSpan);
+                            }
+                            s = formattableArg.ToString(itemFormat, provider);
+                        }
+                        else if (arg != null)
+                        {
+                            s = arg.ToString();
+                        }
                     }
+                    // Append it to the final output of the Format String.
+                    if (s == null)
+                        s = String.Empty;
+
                 }
-                // Append it to the final output of the Format String.
-                if (s == null) s = String.Empty;
+
                 int pad = width - s.Length;
                 if (!leftJustify && pad > 0) Append(' ', pad);
                 Append(s);
@@ -2176,6 +2225,14 @@ namespace System.Text
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => new Span<char>(m_ChunkChars, m_ChunkLength, m_ChunkChars.Length - m_ChunkLength);
+        }
+
+        private unsafe char* RemainingCurrentChunk2()
+        {
+            fixed (char* r = &m_ChunkChars[0]) //, m_ChunkLength, m_ChunkChars.Length - m_ChunkLength);
+            {
+                return r;
+            }
         }
 
         /// <summary>

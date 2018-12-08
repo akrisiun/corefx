@@ -46,6 +46,14 @@ namespace System.Globalization
         internal static string Format(TimeSpan value, string format, IFormatProvider formatProvider) =>
             StringBuilderCache.GetStringAndRelease(FormatToBuilder(value, format, formatProvider));
 
+        public static unsafe bool TryFormat(TimeSpan value, ref string destination, out int charsWritten, char* format, IFormatProvider provider)
+        {
+            var s = value.ToString();
+            destination = s;
+            charsWritten = s.Length;
+            return true;
+        }
+
         /// <summary>Main method called from TimeSpan.TryFormat.</summary>
         internal static bool TryFormat(TimeSpan value, Span<char> destination, out int charsWritten, ReadOnlySpan<char> format, IFormatProvider formatProvider)
         {
