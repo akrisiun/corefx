@@ -112,6 +112,7 @@
   
   <Target Name="DownloadAndUnzipSymbolPackage"
           Condition="'@(SymbolPackagesToDownload)' != ''">
+          <!--
       <DownloadFile SourceUrl="%(SymbolPackagesToDownload.Url)"
                     DestinationFolder="$(SymbolPackagesDir)"
                     DestinationFileName="%(SymbolPackagesToDownload.DestinationFile)"
@@ -120,6 +121,7 @@
              DestinationFolder="%(SymbolPackagesToDownload.UnzipDestinationDir)"
              OverwriteReadOnlyFiles="true"
              Condition="Exists('$(SymbolPackagesDir)\%(SymbolPackagesToDownload.DestinationFile)')" />
+             -->
   </Target>
           
 

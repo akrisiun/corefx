@@ -43,11 +43,13 @@
   </Target>
 
   <Target Name="BuildNative">
+    <!--
     <ItemGroup>
       <_BuildNativeProjects Include="src\Native\build-native.proj" />
     </ItemGroup>
 
     <MSBuild Projects="@(_BuildNativeProjects)" Properties="$(ProjectProperties)" />
+    -->
   </Target>
 
   <Target Name="BuildManaged">
@@ -59,11 +61,13 @@
   </Target>
 
   <Target Name="Test">
+    <!--
     <ItemGroup>
       <_TestProjects Include="src\tests.builds" />
     </ItemGroup>
 
     <MSBuild Projects="@(_TestProjects)" Properties="$(ProjectProperties)" />
+    -->
   </Target>
 
   <Target Name="Pack">
