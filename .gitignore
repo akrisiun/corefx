@@ -278,3 +278,4 @@ config.ps1
 launchSettings.json
 ./lib/
 lib/
+src/System.Data.SqlClient/*.dll

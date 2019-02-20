@@ -19,6 +19,6 @@
   <Target Name="ResolveMatchingContract" />
 
   <Target Name="VerifyMatchingContract" AfterTargets="ResolveReferences">
-    <Error Condition="'$(HasMatchingContract)' == 'true' and !Exists('%(ResolvedMatchingContract.Identity)')" Text="ResolveMatchingContract could not find a matching contract '%(ResolvedMatchingContract.Identity)' not found." />
+    <Message Condition="'$(HasMatchingContract)' == 'true' and !Exists('%(ResolvedMatchingContract.Identity)')" Text="ResolveMatchingContract could not find a matching contract '%(ResolvedMatchingContract.Identity)' not found." />
   </Target>
 </Project>

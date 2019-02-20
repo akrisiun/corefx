@@ -87,7 +87,9 @@
 
     <MakeDir Directories="$(ILLinkTrimInputPath)" />
 
-    <!-- Move the assembly into a subdirectory for ILLink -->
+    <!-- Move the assembly into a subdirectory for ILLink 
+    (91,5): error MSB3680: The source file "D:\Beta\dotnet\dotnet-cli\vendor\corefx\artifacts\obj\System.Data.Common\netcoreapp-Debug\System.Data.Common.dll" does not exist.
+    -->
     <Move SourceFiles="$(ILLinkTrimAssemblyPath)"
           DestinationFolder="$(ILLinkTrimInputPath)"
     />

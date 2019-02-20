@@ -1,0 +1,147 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28407.52
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "System.Data.SqlClient", "System.Data.SqlClient\src\System.Data.SqlClient.csproj", "{D4550556-4745-457F-BA8F-3EBF3836D6B4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D58E8D2B-3331-4660-8DFB-512D66F8EC63} = {D58E8D2B-3331-4660-8DFB-512D66F8EC63}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "System.Data.SqlClient", "System.Data.SqlClient\ref\System.Data.SqlClient.csproj", "{D58E8D2B-3331-4660-8DFB-512D66F8EC63}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E107E9C1-E893-4E87-987E-04EF0DCEAEFD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ref", "ref", "{2E666815-2EDB-464B-9DF6-380BF4789AD4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "System.Data.Common", "System.Data.Common\src\System.Data.Common.csproj", "{29EF8D53-8E84-4E49-B90F-5950A2FE7D54}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Win32.Registry", "Microsoft.Win32.Registry\src\Microsoft.Win32.Registry.csproj", "{D3F18ACC-D327-4ABB-BA6C-E9C34A041B2F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "System.Runtime", "System.Runtime\src\System.Runtime.csproj", "{56B9D0A9-44D3-488E-8B42-C14A6E30CAB2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "System.Private.Uri", "System.Private.Uri\src\System.Private.Uri.csproj", "{4AC5343E-6E31-4BA5-A795-0493AE7E9008}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		netcoreapp-Debug|Any CPU = netcoreapp-Debug|Any CPU
+		netcoreapp-Release|Any CPU = netcoreapp-Release|Any CPU
+		Release|Any CPU = Release|Any CPU
+		uapaot-Windows_NT-Debug|Any CPU = uapaot-Windows_NT-Debug|Any CPU
+		uapaot-Windows_NT-Release|Any CPU = uapaot-Windows_NT-Release|Any CPU
+		uap-Windows_NT-Debug|Any CPU = uap-Windows_NT-Debug|Any CPU
+		uap-Windows_NT-Release|Any CPU = uap-Windows_NT-Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D4550556-4745-457F-BA8F-3EBF3836D6B4}.Debug|Any CPU.ActiveCfg = netcoreapp-Windows_NT-Debug|Any CPU
+		{D4550556-4745-457F-BA8F-3EBF3836D6B4}.Debug|Any CPU.Build.0 = netcoreapp-Windows_NT-Debug|Any CPU
+		{D4550556-4745-457F-BA8F-3EBF3836D6B4}.netcoreapp-Debug|Any CPU.ActiveCfg = netcoreapp-Debug|Any CPU
+		{D4550556-4745-457F-BA8F-3EBF3836D6B4}.netcoreapp-Debug|Any CPU.Build.0 = netcoreapp-Debug|Any CPU
+		{D4550556-4745-457F-BA8F-3EBF3836D6B4}.netcoreapp-Release|Any CPU.ActiveCfg = netcoreapp-Release|Any CPU
+		{D4550556-4745-457F-BA8F-3EBF3836D6B4}.netcoreapp-Release|Any CPU.Build.0 = netcoreapp-Release|Any CPU
+		{D4550556-4745-457F-BA8F-3EBF3836D6B4}.Release|Any CPU.ActiveCfg = netcoreapp-Windows_NT-Release|Any CPU
+		{D4550556-4745-457F-BA8F-3EBF3836D6B4}.Release|Any CPU.Build.0 = netcoreapp-Windows_NT-Release|Any CPU
+		{D4550556-4745-457F-BA8F-3EBF3836D6B4}.uapaot-Windows_NT-Debug|Any CPU.ActiveCfg = uap-Windows_NT-Debug|Any CPU
+		{D4550556-4745-457F-BA8F-3EBF3836D6B4}.uapaot-Windows_NT-Debug|Any CPU.Build.0 = uap-Windows_NT-Debug|Any CPU
+		{D4550556-4745-457F-BA8F-3EBF3836D6B4}.uapaot-Windows_NT-Release|Any CPU.ActiveCfg = uap-Windows_NT-Debug|Any CPU
+		{D4550556-4745-457F-BA8F-3EBF3836D6B4}.uapaot-Windows_NT-Release|Any CPU.Build.0 = uap-Windows_NT-Debug|Any CPU
+		{D4550556-4745-457F-BA8F-3EBF3836D6B4}.uap-Windows_NT-Debug|Any CPU.ActiveCfg = uap-Windows_NT-Debug|Any CPU
+		{D4550556-4745-457F-BA8F-3EBF3836D6B4}.uap-Windows_NT-Debug|Any CPU.Build.0 = uap-Windows_NT-Debug|Any CPU
+		{D4550556-4745-457F-BA8F-3EBF3836D6B4}.uap-Windows_NT-Release|Any CPU.ActiveCfg = uap-Windows_NT-Release|Any CPU
+		{D4550556-4745-457F-BA8F-3EBF3836D6B4}.uap-Windows_NT-Release|Any CPU.Build.0 = uap-Windows_NT-Release|Any CPU
+		{D58E8D2B-3331-4660-8DFB-512D66F8EC63}.Debug|Any CPU.ActiveCfg = netcoreapp-Debug|Any CPU
+		{D58E8D2B-3331-4660-8DFB-512D66F8EC63}.Debug|Any CPU.Build.0 = netcoreapp-Debug|Any CPU
+		{D58E8D2B-3331-4660-8DFB-512D66F8EC63}.netcoreapp-Debug|Any CPU.ActiveCfg = netcoreapp-Debug|Any CPU
+		{D58E8D2B-3331-4660-8DFB-512D66F8EC63}.netcoreapp-Debug|Any CPU.Build.0 = netcoreapp-Debug|Any CPU
+		{D58E8D2B-3331-4660-8DFB-512D66F8EC63}.netcoreapp-Release|Any CPU.ActiveCfg = netcoreapp-Release|Any CPU
+		{D58E8D2B-3331-4660-8DFB-512D66F8EC63}.netcoreapp-Release|Any CPU.Build.0 = netcoreapp-Release|Any CPU
+		{D58E8D2B-3331-4660-8DFB-512D66F8EC63}.Release|Any CPU.ActiveCfg = netcoreapp-Release|Any CPU
+		{D58E8D2B-3331-4660-8DFB-512D66F8EC63}.Release|Any CPU.Build.0 = netcoreapp-Release|Any CPU
+		{D58E8D2B-3331-4660-8DFB-512D66F8EC63}.uapaot-Windows_NT-Debug|Any CPU.ActiveCfg = netfx-Debug|Any CPU
+		{D58E8D2B-3331-4660-8DFB-512D66F8EC63}.uapaot-Windows_NT-Debug|Any CPU.Build.0 = netfx-Debug|Any CPU
+		{D58E8D2B-3331-4660-8DFB-512D66F8EC63}.uapaot-Windows_NT-Release|Any CPU.ActiveCfg = netfx-Debug|Any CPU
+		{D58E8D2B-3331-4660-8DFB-512D66F8EC63}.uapaot-Windows_NT-Release|Any CPU.Build.0 = netfx-Debug|Any CPU
+		{D58E8D2B-3331-4660-8DFB-512D66F8EC63}.uap-Windows_NT-Debug|Any CPU.ActiveCfg = netfx-Debug|Any CPU
+		{D58E8D2B-3331-4660-8DFB-512D66F8EC63}.uap-Windows_NT-Debug|Any CPU.Build.0 = netfx-Debug|Any CPU
+		{D58E8D2B-3331-4660-8DFB-512D66F8EC63}.uap-Windows_NT-Release|Any CPU.ActiveCfg = netfx-Debug|Any CPU
+		{D58E8D2B-3331-4660-8DFB-512D66F8EC63}.uap-Windows_NT-Release|Any CPU.Build.0 = netfx-Debug|Any CPU
+		{29EF8D53-8E84-4E49-B90F-5950A2FE7D54}.Debug|Any CPU.ActiveCfg = netcoreapp-Debug|Any CPU
+		{29EF8D53-8E84-4E49-B90F-5950A2FE7D54}.Debug|Any CPU.Build.0 = netcoreapp-Debug|Any CPU
+		{29EF8D53-8E84-4E49-B90F-5950A2FE7D54}.netcoreapp-Debug|Any CPU.ActiveCfg = netcoreapp-Debug|Any CPU
+		{29EF8D53-8E84-4E49-B90F-5950A2FE7D54}.netcoreapp-Debug|Any CPU.Build.0 = netcoreapp-Debug|Any CPU
+		{29EF8D53-8E84-4E49-B90F-5950A2FE7D54}.netcoreapp-Release|Any CPU.ActiveCfg = netcoreapp-Release|Any CPU
+		{29EF8D53-8E84-4E49-B90F-5950A2FE7D54}.netcoreapp-Release|Any CPU.Build.0 = netcoreapp-Release|Any CPU
+		{29EF8D53-8E84-4E49-B90F-5950A2FE7D54}.Release|Any CPU.ActiveCfg = netcoreapp-Release|Any CPU
+		{29EF8D53-8E84-4E49-B90F-5950A2FE7D54}.Release|Any CPU.Build.0 = netcoreapp-Release|Any CPU
+		{29EF8D53-8E84-4E49-B90F-5950A2FE7D54}.uapaot-Windows_NT-Debug|Any CPU.ActiveCfg = uapaot-Windows_NT-Debug|Any CPU
+		{29EF8D53-8E84-4E49-B90F-5950A2FE7D54}.uapaot-Windows_NT-Debug|Any CPU.Build.0 = uapaot-Windows_NT-Debug|Any CPU
+		{29EF8D53-8E84-4E49-B90F-5950A2FE7D54}.uapaot-Windows_NT-Release|Any CPU.ActiveCfg = uapaot-Windows_NT-Release|Any CPU
+		{29EF8D53-8E84-4E49-B90F-5950A2FE7D54}.uapaot-Windows_NT-Release|Any CPU.Build.0 = uapaot-Windows_NT-Release|Any CPU
+		{29EF8D53-8E84-4E49-B90F-5950A2FE7D54}.uap-Windows_NT-Debug|Any CPU.ActiveCfg = uap-Windows_NT-Debug|Any CPU
+		{29EF8D53-8E84-4E49-B90F-5950A2FE7D54}.uap-Windows_NT-Debug|Any CPU.Build.0 = uap-Windows_NT-Debug|Any CPU
+		{29EF8D53-8E84-4E49-B90F-5950A2FE7D54}.uap-Windows_NT-Release|Any CPU.ActiveCfg = uap-Windows_NT-Release|Any CPU
+		{29EF8D53-8E84-4E49-B90F-5950A2FE7D54}.uap-Windows_NT-Release|Any CPU.Build.0 = uap-Windows_NT-Release|Any CPU
+		{D3F18ACC-D327-4ABB-BA6C-E9C34A041B2F}.Debug|Any CPU.ActiveCfg = netstandard-Unix-Debug|Any CPU
+		{D3F18ACC-D327-4ABB-BA6C-E9C34A041B2F}.Debug|Any CPU.Build.0 = netstandard-Unix-Debug|Any CPU
+		{D3F18ACC-D327-4ABB-BA6C-E9C34A041B2F}.netcoreapp-Debug|Any CPU.ActiveCfg = netcoreapp-Windows_NT-Release|Any CPU
+		{D3F18ACC-D327-4ABB-BA6C-E9C34A041B2F}.netcoreapp-Debug|Any CPU.Build.0 = netcoreapp-Windows_NT-Release|Any CPU
+		{D3F18ACC-D327-4ABB-BA6C-E9C34A041B2F}.netcoreapp-Release|Any CPU.ActiveCfg = netcoreapp-Windows_NT-Release|Any CPU
+		{D3F18ACC-D327-4ABB-BA6C-E9C34A041B2F}.netcoreapp-Release|Any CPU.Build.0 = netcoreapp-Windows_NT-Release|Any CPU
+		{D3F18ACC-D327-4ABB-BA6C-E9C34A041B2F}.Release|Any CPU.ActiveCfg = net461-Windows_NT-Release|Any CPU
+		{D3F18ACC-D327-4ABB-BA6C-E9C34A041B2F}.Release|Any CPU.Build.0 = net461-Windows_NT-Release|Any CPU
+		{D3F18ACC-D327-4ABB-BA6C-E9C34A041B2F}.uapaot-Windows_NT-Debug|Any CPU.ActiveCfg = net461-Windows_NT-Release|Any CPU
+		{D3F18ACC-D327-4ABB-BA6C-E9C34A041B2F}.uapaot-Windows_NT-Debug|Any CPU.Build.0 = net461-Windows_NT-Release|Any CPU
+		{D3F18ACC-D327-4ABB-BA6C-E9C34A041B2F}.uapaot-Windows_NT-Release|Any CPU.ActiveCfg = net461-Windows_NT-Release|Any CPU
+		{D3F18ACC-D327-4ABB-BA6C-E9C34A041B2F}.uapaot-Windows_NT-Release|Any CPU.Build.0 = net461-Windows_NT-Release|Any CPU
+		{D3F18ACC-D327-4ABB-BA6C-E9C34A041B2F}.uap-Windows_NT-Debug|Any CPU.ActiveCfg = net461-Windows_NT-Release|Any CPU
+		{D3F18ACC-D327-4ABB-BA6C-E9C34A041B2F}.uap-Windows_NT-Debug|Any CPU.Build.0 = net461-Windows_NT-Release|Any CPU
+		{D3F18ACC-D327-4ABB-BA6C-E9C34A041B2F}.uap-Windows_NT-Release|Any CPU.ActiveCfg = net461-Windows_NT-Release|Any CPU
+		{D3F18ACC-D327-4ABB-BA6C-E9C34A041B2F}.uap-Windows_NT-Release|Any CPU.Build.0 = net461-Windows_NT-Release|Any CPU
+		{56B9D0A9-44D3-488E-8B42-C14A6E30CAB2}.Debug|Any CPU.ActiveCfg = netcoreappaot-Windows_NT-Debug|Any CPU
+		{56B9D0A9-44D3-488E-8B42-C14A6E30CAB2}.Debug|Any CPU.Build.0 = netcoreappaot-Windows_NT-Debug|Any CPU
+		{56B9D0A9-44D3-488E-8B42-C14A6E30CAB2}.netcoreapp-Debug|Any CPU.ActiveCfg = netcoreapp-Windows_NT-Release|Any CPU
+		{56B9D0A9-44D3-488E-8B42-C14A6E30CAB2}.netcoreapp-Debug|Any CPU.Build.0 = netcoreapp-Windows_NT-Release|Any CPU
+		{56B9D0A9-44D3-488E-8B42-C14A6E30CAB2}.netcoreapp-Release|Any CPU.ActiveCfg = netcoreapp-Windows_NT-Release|Any CPU
+		{56B9D0A9-44D3-488E-8B42-C14A6E30CAB2}.netcoreapp-Release|Any CPU.Build.0 = netcoreapp-Windows_NT-Release|Any CPU
+		{56B9D0A9-44D3-488E-8B42-C14A6E30CAB2}.Release|Any CPU.ActiveCfg = netcoreapp-Windows_NT-Release|Any CPU
+		{56B9D0A9-44D3-488E-8B42-C14A6E30CAB2}.Release|Any CPU.Build.0 = netcoreapp-Windows_NT-Release|Any CPU
+		{56B9D0A9-44D3-488E-8B42-C14A6E30CAB2}.uapaot-Windows_NT-Debug|Any CPU.ActiveCfg = uapaot-Windows_NT-Debug|Any CPU
+		{56B9D0A9-44D3-488E-8B42-C14A6E30CAB2}.uapaot-Windows_NT-Debug|Any CPU.Build.0 = uapaot-Windows_NT-Debug|Any CPU
+		{56B9D0A9-44D3-488E-8B42-C14A6E30CAB2}.uapaot-Windows_NT-Release|Any CPU.ActiveCfg = uapaot-Windows_NT-Release|Any CPU
+		{56B9D0A9-44D3-488E-8B42-C14A6E30CAB2}.uapaot-Windows_NT-Release|Any CPU.Build.0 = uapaot-Windows_NT-Release|Any CPU
+		{56B9D0A9-44D3-488E-8B42-C14A6E30CAB2}.uap-Windows_NT-Debug|Any CPU.ActiveCfg = uap-Windows_NT-Debug|Any CPU
+		{56B9D0A9-44D3-488E-8B42-C14A6E30CAB2}.uap-Windows_NT-Debug|Any CPU.Build.0 = uap-Windows_NT-Debug|Any CPU
+		{56B9D0A9-44D3-488E-8B42-C14A6E30CAB2}.uap-Windows_NT-Release|Any CPU.ActiveCfg = uap-Windows_NT-Release|Any CPU
+		{56B9D0A9-44D3-488E-8B42-C14A6E30CAB2}.uap-Windows_NT-Release|Any CPU.Build.0 = uap-Windows_NT-Release|Any CPU
+		{4AC5343E-6E31-4BA5-A795-0493AE7E9008}.Debug|Any CPU.ActiveCfg = netcoreappaot-Windows_NT-Debug|Any CPU
+		{4AC5343E-6E31-4BA5-A795-0493AE7E9008}.Debug|Any CPU.Build.0 = netcoreappaot-Windows_NT-Debug|Any CPU
+		{4AC5343E-6E31-4BA5-A795-0493AE7E9008}.netcoreapp-Debug|Any CPU.ActiveCfg = netcoreapp-Windows_NT-Release|Any CPU
+		{4AC5343E-6E31-4BA5-A795-0493AE7E9008}.netcoreapp-Debug|Any CPU.Build.0 = netcoreapp-Windows_NT-Release|Any CPU
+		{4AC5343E-6E31-4BA5-A795-0493AE7E9008}.netcoreapp-Release|Any CPU.ActiveCfg = netcoreapp-Windows_NT-Release|Any CPU
+		{4AC5343E-6E31-4BA5-A795-0493AE7E9008}.netcoreapp-Release|Any CPU.Build.0 = netcoreapp-Windows_NT-Release|Any CPU
+		{4AC5343E-6E31-4BA5-A795-0493AE7E9008}.Release|Any CPU.ActiveCfg = netcoreapp-Windows_NT-Release|Any CPU
+		{4AC5343E-6E31-4BA5-A795-0493AE7E9008}.Release|Any CPU.Build.0 = netcoreapp-Windows_NT-Release|Any CPU
+		{4AC5343E-6E31-4BA5-A795-0493AE7E9008}.uapaot-Windows_NT-Debug|Any CPU.ActiveCfg = uapaot-Windows_NT-Debug|Any CPU
+		{4AC5343E-6E31-4BA5-A795-0493AE7E9008}.uapaot-Windows_NT-Debug|Any CPU.Build.0 = uapaot-Windows_NT-Debug|Any CPU
+		{4AC5343E-6E31-4BA5-A795-0493AE7E9008}.uapaot-Windows_NT-Release|Any CPU.ActiveCfg = uapaot-Windows_NT-Release|Any CPU
+		{4AC5343E-6E31-4BA5-A795-0493AE7E9008}.uapaot-Windows_NT-Release|Any CPU.Build.0 = uapaot-Windows_NT-Release|Any CPU
+		{4AC5343E-6E31-4BA5-A795-0493AE7E9008}.uap-Windows_NT-Debug|Any CPU.ActiveCfg = uap-Windows_NT-Debug|Any CPU
+		{4AC5343E-6E31-4BA5-A795-0493AE7E9008}.uap-Windows_NT-Debug|Any CPU.Build.0 = uap-Windows_NT-Debug|Any CPU
+		{4AC5343E-6E31-4BA5-A795-0493AE7E9008}.uap-Windows_NT-Release|Any CPU.ActiveCfg = uap-Windows_NT-Release|Any CPU
+		{4AC5343E-6E31-4BA5-A795-0493AE7E9008}.uap-Windows_NT-Release|Any CPU.Build.0 = uap-Windows_NT-Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D4550556-4745-457F-BA8F-3EBF3836D6B4} = {E107E9C1-E893-4E87-987E-04EF0DCEAEFD}
+		{D58E8D2B-3331-4660-8DFB-512D66F8EC63} = {2E666815-2EDB-464B-9DF6-380BF4789AD4}
+		{29EF8D53-8E84-4E49-B90F-5950A2FE7D54} = {E107E9C1-E893-4E87-987E-04EF0DCEAEFD}
+		{D3F18ACC-D327-4ABB-BA6C-E9C34A041B2F} = {E107E9C1-E893-4E87-987E-04EF0DCEAEFD}
+		{56B9D0A9-44D3-488E-8B42-C14A6E30CAB2} = {E107E9C1-E893-4E87-987E-04EF0DCEAEFD}
+		{4AC5343E-6E31-4BA5-A795-0493AE7E9008} = {E107E9C1-E893-4E87-987E-04EF0DCEAEFD}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D25C803E-4BF4-4DC3-BCD4-F9E7C193FF4D}
+	EndGlobalSection
+EndGlobal
