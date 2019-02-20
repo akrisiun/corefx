@@ -1,0 +1,2575 @@
+{
+  "Id": "Microsoft.NETCore.Targets",
+  "Version": "3.0.0-dev.19120.1",
+  "SupportedFrameworks": {
+    ".NETCore,Version=v4.5": "unknown",
+    ".NETCore,Version=v4.5.1": "unknown",
+    ".NETCore,Version=v5.0": "unknown",
+    ".NETCoreApp,Version=v1.0": "unknown",
+    ".NETCoreApp,Version=v1.1": "unknown",
+    ".NETCoreApp,Version=v2.0": "unknown",
+    ".NETCoreApp,Version=v2.1": "unknown",
+    ".NETCoreApp,Version=v2.2": "unknown",
+    ".NETCoreApp,Version=v3.0": "unknown",
+    ".NETFramework,Version=v4.5": "unknown",
+    ".NETFramework,Version=v4.5.1": "unknown",
+    ".NETFramework,Version=v4.6": "unknown",
+    ".NETFramework,Version=v4.6.1": "unknown",
+    ".NETFramework,Version=v4.6.2": "unknown",
+    ".NETFramework,Version=v4.7": "unknown",
+    ".NETFramework,Version=v4.7.1": "unknown",
+    ".NETFramework,Version=v4.7.2": "unknown",
+    ".NETStandard,Version=v1.0": "unknown",
+    ".NETStandard,Version=v1.1": "unknown",
+    ".NETStandard,Version=v1.2": "unknown",
+    ".NETStandard,Version=v1.3": "unknown",
+    ".NETStandard,Version=v1.4": "unknown",
+    ".NETStandard,Version=v1.6": "unknown",
+    ".NETStandard,Version=v1.7": "unknown",
+    ".NETStandard,Version=v2.0": "unknown",
+    "MonoAndroid,Version=v1.0": "unknown",
+    "MonoTouch,Version=v1.0": "unknown",
+    "UAP,Version=v10.0": "unknown",
+    "UAP,Version=v10.0.16299": "unknown",
+    "UAP,Version=v10.0.16300": "unknown",
+    "WindowsPhone,Version=v8.0": "unknown",
+    "WindowsPhoneApp,Version=v8.1": "unknown",
+    "Xamarin.iOS,Version=v1.0": "unknown",
+    "Xamarin.Mac,Version=v2.0": "unknown",
+    "Xamarin.TVOS,Version=v1.0": "unknown",
+    "Xamarin.WatchOS,Version=v1.0": "unknown"
+  },
+  "Targets": {
+    ".NETCore,Version=v4.5": {
+      "Framework": ".NETCore,Version=v4.5",
+      "RuntimeID": "",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCore,Version=v4.5.1": {
+      "Framework": ".NETCore,Version=v4.5.1",
+      "RuntimeID": "",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCore,Version=v5.0": {
+      "Framework": ".NETCore,Version=v5.0",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCore,Version=v5.0/win10-x86": {
+      "Framework": ".NETCore,Version=v5.0",
+      "RuntimeID": "win10-x86",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCore,Version=v5.0/win10-x86-aot": {
+      "Framework": ".NETCore,Version=v5.0",
+      "RuntimeID": "win10-x86-aot",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCore,Version=v5.0/win10-x64": {
+      "Framework": ".NETCore,Version=v5.0",
+      "RuntimeID": "win10-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCore,Version=v5.0/win10-x64-aot": {
+      "Framework": ".NETCore,Version=v5.0",
+      "RuntimeID": "win10-x64-aot",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCore,Version=v5.0/win10-arm": {
+      "Framework": ".NETCore,Version=v5.0",
+      "RuntimeID": "win10-arm",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCore,Version=v5.0/win10-arm-aot": {
+      "Framework": ".NETCore,Version=v5.0",
+      "RuntimeID": "win10-arm-aot",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v1.0": {
+      "Framework": ".NETCoreApp,Version=v1.0",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v1.0/win7-x86": {
+      "Framework": ".NETCoreApp,Version=v1.0",
+      "RuntimeID": "win7-x86",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v1.0/win7-x64": {
+      "Framework": ".NETCoreApp,Version=v1.0",
+      "RuntimeID": "win7-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v1.0/osx.10.11-x64": {
+      "Framework": ".NETCoreApp,Version=v1.0",
+      "RuntimeID": "osx.10.11-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v1.0/centos.7-x64": {
+      "Framework": ".NETCoreApp,Version=v1.0",
+      "RuntimeID": "centos.7-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v1.0/debian.8-x64": {
+      "Framework": ".NETCoreApp,Version=v1.0",
+      "RuntimeID": "debian.8-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v1.0/linuxmint.17-x64": {
+      "Framework": ".NETCoreApp,Version=v1.0",
+      "RuntimeID": "linuxmint.17-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v1.0/rhel.7.2-x64": {
+      "Framework": ".NETCoreApp,Version=v1.0",
+      "RuntimeID": "rhel.7.2-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v1.0/ubuntu.14.04-x64": {
+      "Framework": ".NETCoreApp,Version=v1.0",
+      "RuntimeID": "ubuntu.14.04-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v1.0/ubuntu.16.04-x64": {
+      "Framework": ".NETCoreApp,Version=v1.0",
+      "RuntimeID": "ubuntu.16.04-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v1.1": {
+      "Framework": ".NETCoreApp,Version=v1.1",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v1.1/win7-x86": {
+      "Framework": ".NETCoreApp,Version=v1.1",
+      "RuntimeID": "win7-x86",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v1.1/win7-x64": {
+      "Framework": ".NETCoreApp,Version=v1.1",
+      "RuntimeID": "win7-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v1.1/osx.10.11-x64": {
+      "Framework": ".NETCoreApp,Version=v1.1",
+      "RuntimeID": "osx.10.11-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v1.1/centos.7-x64": {
+      "Framework": ".NETCoreApp,Version=v1.1",
+      "RuntimeID": "centos.7-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v1.1/debian.8-x64": {
+      "Framework": ".NETCoreApp,Version=v1.1",
+      "RuntimeID": "debian.8-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v1.1/linuxmint.17-x64": {
+      "Framework": ".NETCoreApp,Version=v1.1",
+      "RuntimeID": "linuxmint.17-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v1.1/rhel.7.2-x64": {
+      "Framework": ".NETCoreApp,Version=v1.1",
+      "RuntimeID": "rhel.7.2-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v1.1/ubuntu.14.04-x64": {
+      "Framework": ".NETCoreApp,Version=v1.1",
+      "RuntimeID": "ubuntu.14.04-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v1.1/ubuntu.16.04-x64": {
+      "Framework": ".NETCoreApp,Version=v1.1",
+      "RuntimeID": "ubuntu.16.04-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v1.1/osx.10.12-x64": {
+      "Framework": ".NETCoreApp,Version=v1.1",
+      "RuntimeID": "osx.10.12-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v1.1/fedora.24-x64": {
+      "Framework": ".NETCoreApp,Version=v1.1",
+      "RuntimeID": "fedora.24-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v1.1/opensuse.42.1-x64": {
+      "Framework": ".NETCoreApp,Version=v1.1",
+      "RuntimeID": "opensuse.42.1-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v1.1/rhel.7-x64": {
+      "Framework": ".NETCoreApp,Version=v1.1",
+      "RuntimeID": "rhel.7-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.0": {
+      "Framework": ".NETCoreApp,Version=v2.0",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.0/win7-x86": {
+      "Framework": ".NETCoreApp,Version=v2.0",
+      "RuntimeID": "win7-x86",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.0/win7-x64": {
+      "Framework": ".NETCoreApp,Version=v2.0",
+      "RuntimeID": "win7-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.0/osx.10.11-x64": {
+      "Framework": ".NETCoreApp,Version=v2.0",
+      "RuntimeID": "osx.10.11-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.0/centos.7-x64": {
+      "Framework": ".NETCoreApp,Version=v2.0",
+      "RuntimeID": "centos.7-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.0/debian.8-x64": {
+      "Framework": ".NETCoreApp,Version=v2.0",
+      "RuntimeID": "debian.8-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.0/linuxmint.17-x64": {
+      "Framework": ".NETCoreApp,Version=v2.0",
+      "RuntimeID": "linuxmint.17-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.0/rhel.7.2-x64": {
+      "Framework": ".NETCoreApp,Version=v2.0",
+      "RuntimeID": "rhel.7.2-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.0/ubuntu.14.04-x64": {
+      "Framework": ".NETCoreApp,Version=v2.0",
+      "RuntimeID": "ubuntu.14.04-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.0/ubuntu.16.04-x64": {
+      "Framework": ".NETCoreApp,Version=v2.0",
+      "RuntimeID": "ubuntu.16.04-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.0/osx.10.12-x64": {
+      "Framework": ".NETCoreApp,Version=v2.0",
+      "RuntimeID": "osx.10.12-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.0/fedora.24-x64": {
+      "Framework": ".NETCoreApp,Version=v2.0",
+      "RuntimeID": "fedora.24-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.0/opensuse.42.1-x64": {
+      "Framework": ".NETCoreApp,Version=v2.0",
+      "RuntimeID": "opensuse.42.1-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.0/rhel.7-x64": {
+      "Framework": ".NETCoreApp,Version=v2.0",
+      "RuntimeID": "rhel.7-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.1": {
+      "Framework": ".NETCoreApp,Version=v2.1",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.1/win7-x86": {
+      "Framework": ".NETCoreApp,Version=v2.1",
+      "RuntimeID": "win7-x86",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.1/win7-x64": {
+      "Framework": ".NETCoreApp,Version=v2.1",
+      "RuntimeID": "win7-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.1/osx.10.11-x64": {
+      "Framework": ".NETCoreApp,Version=v2.1",
+      "RuntimeID": "osx.10.11-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.1/centos.7-x64": {
+      "Framework": ".NETCoreApp,Version=v2.1",
+      "RuntimeID": "centos.7-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.1/debian.8-x64": {
+      "Framework": ".NETCoreApp,Version=v2.1",
+      "RuntimeID": "debian.8-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.1/linuxmint.17-x64": {
+      "Framework": ".NETCoreApp,Version=v2.1",
+      "RuntimeID": "linuxmint.17-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.1/rhel.7.2-x64": {
+      "Framework": ".NETCoreApp,Version=v2.1",
+      "RuntimeID": "rhel.7.2-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.1/ubuntu.14.04-x64": {
+      "Framework": ".NETCoreApp,Version=v2.1",
+      "RuntimeID": "ubuntu.14.04-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.1/ubuntu.16.04-x64": {
+      "Framework": ".NETCoreApp,Version=v2.1",
+      "RuntimeID": "ubuntu.16.04-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.1/osx.10.12-x64": {
+      "Framework": ".NETCoreApp,Version=v2.1",
+      "RuntimeID": "osx.10.12-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.1/fedora.24-x64": {
+      "Framework": ".NETCoreApp,Version=v2.1",
+      "RuntimeID": "fedora.24-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.1/opensuse.42.1-x64": {
+      "Framework": ".NETCoreApp,Version=v2.1",
+      "RuntimeID": "opensuse.42.1-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.1/rhel.7-x64": {
+      "Framework": ".NETCoreApp,Version=v2.1",
+      "RuntimeID": "rhel.7-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.2": {
+      "Framework": ".NETCoreApp,Version=v2.2",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.2/win7-x86": {
+      "Framework": ".NETCoreApp,Version=v2.2",
+      "RuntimeID": "win7-x86",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.2/win7-x64": {
+      "Framework": ".NETCoreApp,Version=v2.2",
+      "RuntimeID": "win7-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.2/osx.10.11-x64": {
+      "Framework": ".NETCoreApp,Version=v2.2",
+      "RuntimeID": "osx.10.11-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.2/centos.7-x64": {
+      "Framework": ".NETCoreApp,Version=v2.2",
+      "RuntimeID": "centos.7-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.2/debian.8-x64": {
+      "Framework": ".NETCoreApp,Version=v2.2",
+      "RuntimeID": "debian.8-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.2/linuxmint.17-x64": {
+      "Framework": ".NETCoreApp,Version=v2.2",
+      "RuntimeID": "linuxmint.17-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.2/rhel.7.2-x64": {
+      "Framework": ".NETCoreApp,Version=v2.2",
+      "RuntimeID": "rhel.7.2-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.2/ubuntu.14.04-x64": {
+      "Framework": ".NETCoreApp,Version=v2.2",
+      "RuntimeID": "ubuntu.14.04-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.2/ubuntu.16.04-x64": {
+      "Framework": ".NETCoreApp,Version=v2.2",
+      "RuntimeID": "ubuntu.16.04-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.2/osx.10.12-x64": {
+      "Framework": ".NETCoreApp,Version=v2.2",
+      "RuntimeID": "osx.10.12-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.2/fedora.24-x64": {
+      "Framework": ".NETCoreApp,Version=v2.2",
+      "RuntimeID": "fedora.24-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.2/opensuse.42.1-x64": {
+      "Framework": ".NETCoreApp,Version=v2.2",
+      "RuntimeID": "opensuse.42.1-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v2.2/rhel.7-x64": {
+      "Framework": ".NETCoreApp,Version=v2.2",
+      "RuntimeID": "rhel.7-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v3.0": {
+      "Framework": ".NETCoreApp,Version=v3.0",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v3.0/win7-x86": {
+      "Framework": ".NETCoreApp,Version=v3.0",
+      "RuntimeID": "win7-x86",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v3.0/win7-x64": {
+      "Framework": ".NETCoreApp,Version=v3.0",
+      "RuntimeID": "win7-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v3.0/osx.10.11-x64": {
+      "Framework": ".NETCoreApp,Version=v3.0",
+      "RuntimeID": "osx.10.11-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v3.0/centos.7-x64": {
+      "Framework": ".NETCoreApp,Version=v3.0",
+      "RuntimeID": "centos.7-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v3.0/debian.8-x64": {
+      "Framework": ".NETCoreApp,Version=v3.0",
+      "RuntimeID": "debian.8-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v3.0/linuxmint.17-x64": {
+      "Framework": ".NETCoreApp,Version=v3.0",
+      "RuntimeID": "linuxmint.17-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v3.0/rhel.7.2-x64": {
+      "Framework": ".NETCoreApp,Version=v3.0",
+      "RuntimeID": "rhel.7.2-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v3.0/ubuntu.14.04-x64": {
+      "Framework": ".NETCoreApp,Version=v3.0",
+      "RuntimeID": "ubuntu.14.04-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v3.0/ubuntu.16.04-x64": {
+      "Framework": ".NETCoreApp,Version=v3.0",
+      "RuntimeID": "ubuntu.16.04-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v3.0/osx.10.12-x64": {
+      "Framework": ".NETCoreApp,Version=v3.0",
+      "RuntimeID": "osx.10.12-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v3.0/fedora.24-x64": {
+      "Framework": ".NETCoreApp,Version=v3.0",
+      "RuntimeID": "fedora.24-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v3.0/opensuse.42.1-x64": {
+      "Framework": ".NETCoreApp,Version=v3.0",
+      "RuntimeID": "opensuse.42.1-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETCoreApp,Version=v3.0/rhel.7-x64": {
+      "Framework": ".NETCoreApp,Version=v3.0",
+      "RuntimeID": "rhel.7-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETFramework,Version=v4.5": {
+      "Framework": ".NETFramework,Version=v4.5",
+      "RuntimeID": "",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETFramework,Version=v4.5/win-x86": {
+      "Framework": ".NETFramework,Version=v4.5",
+      "RuntimeID": "win-x86",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETFramework,Version=v4.5/win-x64": {
+      "Framework": ".NETFramework,Version=v4.5",
+      "RuntimeID": "win-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETFramework,Version=v4.5.1": {
+      "Framework": ".NETFramework,Version=v4.5.1",
+      "RuntimeID": "",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETFramework,Version=v4.5.1/win-x86": {
+      "Framework": ".NETFramework,Version=v4.5.1",
+      "RuntimeID": "win-x86",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETFramework,Version=v4.5.1/win-x64": {
+      "Framework": ".NETFramework,Version=v4.5.1",
+      "RuntimeID": "win-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETFramework,Version=v4.6": {
+      "Framework": ".NETFramework,Version=v4.6",
+      "RuntimeID": "",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETFramework,Version=v4.6/win-x86": {
+      "Framework": ".NETFramework,Version=v4.6",
+      "RuntimeID": "win-x86",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETFramework,Version=v4.6/win-x64": {
+      "Framework": ".NETFramework,Version=v4.6",
+      "RuntimeID": "win-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETFramework,Version=v4.6/win7-x86": {
+      "Framework": ".NETFramework,Version=v4.6",
+      "RuntimeID": "win7-x86",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETFramework,Version=v4.6/win7-x64": {
+      "Framework": ".NETFramework,Version=v4.6",
+      "RuntimeID": "win7-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETFramework,Version=v4.6.1": {
+      "Framework": ".NETFramework,Version=v4.6.1",
+      "RuntimeID": "",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETFramework,Version=v4.6.1/win-x86": {
+      "Framework": ".NETFramework,Version=v4.6.1",
+      "RuntimeID": "win-x86",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETFramework,Version=v4.6.1/win-x64": {
+      "Framework": ".NETFramework,Version=v4.6.1",
+      "RuntimeID": "win-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETFramework,Version=v4.6.1/win7-x86": {
+      "Framework": ".NETFramework,Version=v4.6.1",
+      "RuntimeID": "win7-x86",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETFramework,Version=v4.6.1/win7-x64": {
+      "Framework": ".NETFramework,Version=v4.6.1",
+      "RuntimeID": "win7-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETFramework,Version=v4.6.2": {
+      "Framework": ".NETFramework,Version=v4.6.2",
+      "RuntimeID": "",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETFramework,Version=v4.6.2/win-x86": {
+      "Framework": ".NETFramework,Version=v4.6.2",
+      "RuntimeID": "win-x86",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETFramework,Version=v4.6.2/win-x64": {
+      "Framework": ".NETFramework,Version=v4.6.2",
+      "RuntimeID": "win-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETFramework,Version=v4.6.2/win7-x86": {
+      "Framework": ".NETFramework,Version=v4.6.2",
+      "RuntimeID": "win7-x86",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETFramework,Version=v4.6.2/win7-x64": {
+      "Framework": ".NETFramework,Version=v4.6.2",
+      "RuntimeID": "win7-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETFramework,Version=v4.7": {
+      "Framework": ".NETFramework,Version=v4.7",
+      "RuntimeID": "",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETFramework,Version=v4.7/win-x86": {
+      "Framework": ".NETFramework,Version=v4.7",
+      "RuntimeID": "win-x86",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETFramework,Version=v4.7/win-x64": {
+      "Framework": ".NETFramework,Version=v4.7",
+      "RuntimeID": "win-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETFramework,Version=v4.7/win7-x86": {
+      "Framework": ".NETFramework,Version=v4.7",
+      "RuntimeID": "win7-x86",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETFramework,Version=v4.7/win7-x64": {
+      "Framework": ".NETFramework,Version=v4.7",
+      "RuntimeID": "win7-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETFramework,Version=v4.7.1": {
+      "Framework": ".NETFramework,Version=v4.7.1",
+      "RuntimeID": "",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETFramework,Version=v4.7.1/win-x86": {
+      "Framework": ".NETFramework,Version=v4.7.1",
+      "RuntimeID": "win-x86",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETFramework,Version=v4.7.1/win-x64": {
+      "Framework": ".NETFramework,Version=v4.7.1",
+      "RuntimeID": "win-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETFramework,Version=v4.7.1/win7-x86": {
+      "Framework": ".NETFramework,Version=v4.7.1",
+      "RuntimeID": "win7-x86",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETFramework,Version=v4.7.1/win7-x64": {
+      "Framework": ".NETFramework,Version=v4.7.1",
+      "RuntimeID": "win7-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETFramework,Version=v4.7.2": {
+      "Framework": ".NETFramework,Version=v4.7.2",
+      "RuntimeID": "",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETFramework,Version=v4.7.2/win-x86": {
+      "Framework": ".NETFramework,Version=v4.7.2",
+      "RuntimeID": "win-x86",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETFramework,Version=v4.7.2/win-x64": {
+      "Framework": ".NETFramework,Version=v4.7.2",
+      "RuntimeID": "win-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETFramework,Version=v4.7.2/win7-x86": {
+      "Framework": ".NETFramework,Version=v4.7.2",
+      "RuntimeID": "win7-x86",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETFramework,Version=v4.7.2/win7-x64": {
+      "Framework": ".NETFramework,Version=v4.7.2",
+      "RuntimeID": "win7-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETStandard,Version=v1.0": {
+      "Framework": ".NETStandard,Version=v1.0",
+      "RuntimeID": "",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETStandard,Version=v1.1": {
+      "Framework": ".NETStandard,Version=v1.1",
+      "RuntimeID": "",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETStandard,Version=v1.2": {
+      "Framework": ".NETStandard,Version=v1.2",
+      "RuntimeID": "",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETStandard,Version=v1.3": {
+      "Framework": ".NETStandard,Version=v1.3",
+      "RuntimeID": "",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETStandard,Version=v1.4": {
+      "Framework": ".NETStandard,Version=v1.4",
+      "RuntimeID": "",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETStandard,Version=v1.6": {
+      "Framework": ".NETStandard,Version=v1.6",
+      "RuntimeID": "",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETStandard,Version=v1.7": {
+      "Framework": ".NETStandard,Version=v1.7",
+      "RuntimeID": "",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    ".NETStandard,Version=v2.0": {
+      "Framework": ".NETStandard,Version=v2.0",
+      "RuntimeID": "",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    "MonoAndroid,Version=v1.0": {
+      "Framework": "MonoAndroid,Version=v1.0",
+      "RuntimeID": "",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    "MonoTouch,Version=v1.0": {
+      "Framework": "MonoTouch,Version=v1.0",
+      "RuntimeID": "",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    "UAP,Version=v10.0": {
+      "Framework": "UAP,Version=v10.0",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    "UAP,Version=v10.0/win10-x86": {
+      "Framework": "UAP,Version=v10.0",
+      "RuntimeID": "win10-x86",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    "UAP,Version=v10.0/win10-x86-aot": {
+      "Framework": "UAP,Version=v10.0",
+      "RuntimeID": "win10-x86-aot",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    "UAP,Version=v10.0/win10-x64": {
+      "Framework": "UAP,Version=v10.0",
+      "RuntimeID": "win10-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    "UAP,Version=v10.0/win10-x64-aot": {
+      "Framework": "UAP,Version=v10.0",
+      "RuntimeID": "win10-x64-aot",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    "UAP,Version=v10.0/win10-arm": {
+      "Framework": "UAP,Version=v10.0",
+      "RuntimeID": "win10-arm",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    "UAP,Version=v10.0/win10-arm-aot": {
+      "Framework": "UAP,Version=v10.0",
+      "RuntimeID": "win10-arm-aot",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    "UAP,Version=v10.0.16299": {
+      "Framework": "UAP,Version=v10.0.16299",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    "UAP,Version=v10.0.16299/win10-x86": {
+      "Framework": "UAP,Version=v10.0.16299",
+      "RuntimeID": "win10-x86",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    "UAP,Version=v10.0.16299/win10-x86-aot": {
+      "Framework": "UAP,Version=v10.0.16299",
+      "RuntimeID": "win10-x86-aot",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    "UAP,Version=v10.0.16299/win10-x64": {
+      "Framework": "UAP,Version=v10.0.16299",
+      "RuntimeID": "win10-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    "UAP,Version=v10.0.16299/win10-x64-aot": {
+      "Framework": "UAP,Version=v10.0.16299",
+      "RuntimeID": "win10-x64-aot",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    "UAP,Version=v10.0.16299/win10-arm": {
+      "Framework": "UAP,Version=v10.0.16299",
+      "RuntimeID": "win10-arm",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    "UAP,Version=v10.0.16299/win10-arm-aot": {
+      "Framework": "UAP,Version=v10.0.16299",
+      "RuntimeID": "win10-arm-aot",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    "UAP,Version=v10.0.16300": {
+      "Framework": "UAP,Version=v10.0.16300",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    "UAP,Version=v10.0.16300/win10-x86": {
+      "Framework": "UAP,Version=v10.0.16300",
+      "RuntimeID": "win10-x86",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    "UAP,Version=v10.0.16300/win10-x86-aot": {
+      "Framework": "UAP,Version=v10.0.16300",
+      "RuntimeID": "win10-x86-aot",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    "UAP,Version=v10.0.16300/win10-x64": {
+      "Framework": "UAP,Version=v10.0.16300",
+      "RuntimeID": "win10-x64",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    "UAP,Version=v10.0.16300/win10-x64-aot": {
+      "Framework": "UAP,Version=v10.0.16300",
+      "RuntimeID": "win10-x64-aot",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    "UAP,Version=v10.0.16300/win10-arm": {
+      "Framework": "UAP,Version=v10.0.16300",
+      "RuntimeID": "win10-arm",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    "UAP,Version=v10.0.16300/win10-arm-aot": {
+      "Framework": "UAP,Version=v10.0.16300",
+      "RuntimeID": "win10-arm-aot",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    "WindowsPhone,Version=v7.0": {
+      "Framework": "WindowsPhone,Version=v7.0",
+      "RuntimeID": ""
+    },
+    "WindowsPhone,Version=v7.1": {
+      "Framework": "WindowsPhone,Version=v7.1",
+      "RuntimeID": ""
+    },
+    "WindowsPhone,Version=v8.0": {
+      "Framework": "WindowsPhone,Version=v8.0",
+      "RuntimeID": "",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    "WindowsPhoneApp,Version=v8.1": {
+      "Framework": "WindowsPhoneApp,Version=v8.1",
+      "RuntimeID": "",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    "Xamarin.iOS,Version=v1.0": {
+      "Framework": "Xamarin.iOS,Version=v1.0",
+      "RuntimeID": "",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    "Xamarin.Mac,Version=v2.0": {
+      "Framework": "Xamarin.Mac,Version=v2.0",
+      "RuntimeID": "",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    "Xamarin.TVOS,Version=v1.0": {
+      "Framework": "Xamarin.TVOS,Version=v1.0",
+      "RuntimeID": "",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    },
+    "Xamarin.WatchOS,Version=v1.0": {
+      "Framework": "Xamarin.WatchOS,Version=v1.0",
+      "RuntimeID": "",
+      "CompileAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ],
+      "RuntimeAssets": [
+        {
+          "LocalPath": "C:\\Users\\AndriusK\\.nuget\\packages\\microsoft.dotnet.build.tasks.packaging\\1.0.0-beta.19112.3\\build\\content\\_._",
+          "PackagePath": "lib/netstandard1.0/_._"
+        }
+      ]
+    }
+  },
+  "UnusedAssets": []
+}
