@@ -5,6 +5,7 @@
     <PackageVersion>4.7.0</PackageVersion>
     <AssemblyVersion>4.6.0.0</AssemblyVersion>
     <StrongNameKeyId>Microsoft</StrongNameKeyId>
-    <IsUAP>true</IsUAP>
+    <!--<IsUAP>true</IsUAP>-->
+    <IsUAP>false</IsUAP>
   </PropertyGroup>
 </Project>
