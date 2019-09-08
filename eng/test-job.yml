@@ -1,0 +1,51 @@
+parameters:
+  buildConfig: ''
+  archType: ''
+  osGroup: ''
+  osIdentifier: ''
+  container: ''
+  testGroup: ''
+  readyToRun: false
+  helixQueues: ''
+  crossrootfsDir: ''
+  # If true, run the corefx tests instead of the coreclr ones
+  corefxTests: false
+  displayNameArgs: ''
+  runInUnloadableContext: false
+  condition: true
+  ignoreDependencyOnBuildJobs: false
+
+### Test job
+
+### Each test job depends on a corresponding build job with the same
+### buildConfig and archType.
+
+jobs:
+- template: build-test-job.yml
+  parameters:
+    buildConfig:                 ${{ parameters.buildConfig }}
+    archType:                    ${{ parameters.archType }}
+    osGroup:                     ${{ parameters.osGroup }}
+    osIdentifier:                ${{ parameters.osIdentifier }}
+    container:                   ${{ parameters.container }}
+    testGroup:                   ${{ parameters.testGroup }}
+    readyToRun:                  ${{ parameters.readyToRun }}
+    crossrootfsDir:              ${{ parameters.crossrootfsDir }}
+    corefxTests:                 ${{ parameters.coreFxTests }}
+    displayNameArgs:             ${{ parameters.displayNameArgs }}
+    condition:                   ${{ parameters.condition }}
+    ignoreDependencyOnBuildJobs: ${{ parameters.ignoreDependencyOnBuildJobs }}
+
+- template: run-test-job.yml
+  parameters:
+    buildConfig:            ${{ parameters.buildConfig }}
+    archType:               ${{ parameters.archType }}
+    osGroup:                ${{ parameters.osGroup }}
+    osIdentifier:           ${{ parameters.osIdentifier }}
+    container:              ${{ parameters.container }}
+    testGroup:              ${{ parameters.testGroup }}
+    readyToRun:             ${{ parameters.readyToRun }}
+    helixQueues:            ${{ parameters.helixQueues }}
+    corefxTests:            ${{ parameters.coreFxTests }}
+    displayNameArgs:        ${{ parameters.displayNameArgs }}
+    runInUnloadableContext: ${{ parameters.runInUnloadableContext }}

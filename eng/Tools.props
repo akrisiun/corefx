@@ -4,6 +4,11 @@
     <Language>C#</Language>
     <!-- Need to keep in sync with CodeAnalysis.targets file. -->
     <AnalyzerPropsFile>$(ArtifactsToolsetDir)Common\Tools.Analyzers.props</AnalyzerPropsFile>
+
+    <DotNetBuildFromSource>true</DotNetBuildFromSource>
+    <!-- Microsoft.Net.Compilers.Toolset -->
+    <MicrosoftNetCompilersToolsetVersion>3.3.0</MicrosoftNetCompilersToolsetVersion>
+	
   </PropertyGroup>
 
   <Import Project="Analyzers.props" Condition="'$(DotNetBuildFromSource)' != 'true'" />
@@ -15,7 +20,9 @@
     <PackageReference Include="Microsoft.DotNet.Build.Tasks.Packaging" Version="$(MicrosoftDotNetBuildTasksPackagingPackageVersion)" />
 
     <!-- roslyn -->
-    <PackageReference Include="Microsoft.Net.Compilers.Toolset" Version="$(MicrosoftNetCompilersToolsetVersion)" PrivateAssets="all" IsImplicitlyDefined="true" />
+    <PackageReference Include="Microsoft.Net.Compilers.Toolset" 
+		Version="$(MicrosoftNetCompilersToolsetVersion)" 
+		PrivateAssets="all" IsImplicitlyDefined="true" />
   </ItemGroup>
 
   <!-- excluded from offline portion of source build -->
@@ -30,12 +37,13 @@
     <PackageReference Include="Microsoft.DotNet.Build.Tasks.Feed" Version="$(MicrosoftDotNetBuildTasksFeedVersion)" />
     <PackageReference Include="Microsoft.DotNet.VersionTools.Tasks" Version="$(MicrosoftDotNetVersionToolsTasksPackageVersion)" />
 
-    <!-- SourceLink -->
+    <!-- SourceLink
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="$(MicrosoftSourceLinkVersion)" PrivateAssets="all" IsImplicitlyDefined="true" />
     <PackageReference Include="Microsoft.SourceLink.Vsts.Git" Version="$(MicrosoftSourceLinkVersion)" PrivateAssets="all" IsImplicitlyDefined="true" />
-
-    <!-- UWP test tools -->
+	-->
+    <!-- UWP test tools
     <PackageReference Include="Microsoft.DotNet.UAP.TestTools" Version="$(MicrosoftDotNetUapTestToolsPackageVersion)" Condition="$(TargetGroup.StartsWith('uap'))" PrivateAssets="all" IsImplicitlyDefined="true" />
+	 -->
   </ItemGroup>
 
   <UsingTask TaskName="Microsoft.DotNet.Arcade.Sdk.SaveItems" AssemblyFile="$(ArcadeSdkBuildTasksAssembly)" />
@@ -53,6 +61,8 @@
 
   <Import Project="$(RepositoryEngineeringDir)restore\docs.targets" Condition="'$(DotNetBuildFromSource)' != 'true'" />
   <Import Project="$(RepositoryEngineeringDir)restore\optimizationData.targets" Condition="'$(DotNetBuildFromSource)' != 'true' and '$(EnableNgenOptimization)' == 'true'" />
+  <!--
   <Import Project="$(RepositoryEngineeringDir)restore\illink.targets" Condition="'$(ILLinkTrimAssembly)' != 'false'" />
+  -->
 
 </Project>

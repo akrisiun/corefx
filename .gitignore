@@ -1,11 +1,15 @@
 syntax: glob
 
+### .NET Standard specific ###
+
+src/platforms/netcoreapp/
+
 ### VisualStudio ###
 
 # Tool Runtime Dir
+/[Tt]ools/
 .dotnet/
 .packages/
-.tools/
 
 # User-specific files
 *.suo
@@ -40,9 +44,6 @@ cross/android-rootfs/
 
 # Visual Studio
 .vs/
-
-# Ionide
-.ionide/
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
@@ -181,7 +182,6 @@ ClientBin/
 node_modules/
 *.metaproj
 *.metaproj.tmp
-bin.localpkg/
 
 # RIA/Silverlight projects
 Generated_Code/
@@ -277,5 +277,6 @@ Session.vim
 config.ps1
 **/IISApplications
 
-# VS debug support files
-launchSettings.json
+src/.nuget/
+src/apicompat/
+src/coreclr/

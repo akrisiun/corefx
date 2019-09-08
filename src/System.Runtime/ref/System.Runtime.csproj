@@ -1,16 +1,36 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="Current">
   <PropertyGroup>
+  
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <!-- It is a core assembly because it defines System.Object so we need to pass RuntimeMetadataVersion to the compiler -->
     <RuntimeMetadataVersion>v4.0.30319</RuntimeMetadataVersion>
+    <TargetFrameworks>netcoreapp3.0;</TargetFrameworks>
+    <DotNetBuildFromSource>true</DotNetBuildFromSource>
+    <!-- Microsoft.Net.Compilers.Toolset -->
+    <MicrosoftNetCompilersToolsetVersion>3.3.0</MicrosoftNetCompilersToolsetVersion>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+
     <ProjectGuid>{ADBCF120-3454-4A3C-9D1D-AC4293E795D6}</ProjectGuid>
     <!-- disable warnings about obsolete APIs -->
     <NoWarn>$(NoWarn);0809;0618</NoWarn>
-    <Configurations>netcoreapp-Debug;netcoreapp-Release;uap-Debug;uap-Release</Configurations>
+    <Configurations>netcoreapp-Debug</Configurations>
+
     <Nullable>enable</Nullable>
+    <!-- <Nullable>disable</Nullable>
+    -->
+    
+    <FileUpgradeFlags>40</FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="System.Runtime.cs" />
     <Compile Include="System.Runtime.Manual.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Net.Compilers.Toolset" Version="3.3.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
 </Project>

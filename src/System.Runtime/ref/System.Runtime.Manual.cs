@@ -5,6 +5,8 @@
 // Changes to this file must follow the http://aka.ms/api-review process.
 // ------------------------------------------------------------------------------
 
+#pragma warning disable CS8609 // Nullability of reference types in return type doesn't match overridden member.
+
 namespace System
 {
     public partial struct Double
