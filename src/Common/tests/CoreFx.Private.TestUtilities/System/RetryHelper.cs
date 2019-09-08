@@ -46,7 +46,8 @@ namespace System
                     }
                 }
 
-                Thread.Sleep((backoffFunc ?? s_defaultBackoffFunc)(i));
+                // ankr:
+                // Thread.Sleep((backoffFunc ?? s_defaultBackoffFunc)(i));
             }
         }
 

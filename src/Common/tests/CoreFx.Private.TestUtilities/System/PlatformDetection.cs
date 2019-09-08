@@ -154,7 +154,8 @@ namespace System
             {
                 string key = @"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control";
                 string value = "";
-
+// ankr:
+                    /*
                 try
                 {
                     value = (string)Registry.GetValue(key, "ContainerType", defaultValue: "");
@@ -162,7 +163,7 @@ namespace System
                 catch
                 {
                 }
-
+*/
                 return !string.IsNullOrEmpty(value);
             }
 
@@ -178,7 +179,8 @@ namespace System
                 bool enabled = true;
 
                 // This may change in future but for now, missing key means protocol is enabled.
-                try
+                // ankr:
+                /* try
                 {
                     if ((int)Registry.GetValue(clientKey, "Enabled", 1) == 0 || (int)Registry.GetValue(serverKey, "Enabled", 1) == 0)
                     {
@@ -188,6 +190,7 @@ namespace System
                 catch (Exception e) when (e is SecurityException || e is InvalidCastException || e is NullReferenceException)
                 {
                 }
+                */
 
                 return enabled;
             }

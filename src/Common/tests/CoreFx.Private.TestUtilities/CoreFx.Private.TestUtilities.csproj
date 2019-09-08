@@ -2,14 +2,20 @@
   <PropertyGroup>
     <ProjectGuid>{EBDB0247-CA43-4226-B7A1-8FEF21061D09}</ProjectGuid>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <NoWarn>$(NoWarn);CS1573</NoWarn>
+    <NoWarn>$(NoWarn);CS1573;CS0219;</NoWarn>
     <!--
       This assembly is referenced from rid agnostic configurations therefore we can't make it RID specific
       and instead use runtime checks.
     -->
-    <Configurations>netcoreapp-Debug;netcoreapp-Release;netfx-Debug;netfx-Release;uap-Debug;uap-Release</Configurations>
+
+    <TargetFrameworks>netcoreapp3.0;</TargetFrameworks>
+    <EnableSourceLink>false</EnableSourceLink>
+    <!-- Microsoft.Net.Compilers.Toolset -->
+    <MicrosoftNetCompilersToolsetVersion>3.3.0</MicrosoftNetCompilersToolsetVersion>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+
+    <Configurations>netcoreapp-Debug;netfx-Debug</Configurations>
     <FileUpgradeFlags>40</FileUpgradeFlags>
-    <UpgradeBackupLocation>E:\Beta\dotnet\System.Net.Http\src\System.Net.Http\Backup3\</UpgradeBackupLocation>
     <OldToolsVersion>2.0</OldToolsVersion>
   </PropertyGroup>
   <ItemGroup>

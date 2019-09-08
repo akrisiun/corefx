@@ -10,6 +10,8 @@ internal static partial class Interop
         internal struct TOKEN_ELEVATION
         {
             public BOOL TokenIsElevated;
+
+            internal void Set() { TokenIsElevated = default(BOOL); } 
         }
     }
 }

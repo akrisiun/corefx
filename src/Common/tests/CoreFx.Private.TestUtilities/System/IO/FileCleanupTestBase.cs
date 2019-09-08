@@ -41,7 +41,8 @@ namespace System.IO
                 catch (Exception ex)
                 {
                     failure += ex.ToString() + Environment.NewLine;
-                    Thread.Sleep(10); // Give a transient condition like antivirus/indexing a chance to go away
+                    // ankr:
+                    //  Thread.Sleep(10); // Give a transient condition like antivirus/indexing a chance to go away
                 }
             }
 
