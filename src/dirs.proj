@@ -13,7 +13,7 @@
     <Project Include="src.builds" />
     <Project Include="shims\manual\*.csproj" />
     <Project Include="shims\ApiCompat.proj" Condition="'$(DotNetBuildFromSource)' != 'true'" />
-    <Project Include="pretest.proj" Condition="'$(DotNetBuildFromSource)' != 'true' and '$(BuildAllConfigurations)' != 'true'" />
+    <Project Include="pretest.proj.xml" Condition="'$(DotNetBuildFromSource)' != 'true' and '$(BuildAllConfigurations)' != 'true'" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(DirectoryToBuild)' != ''">
