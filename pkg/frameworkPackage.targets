@@ -167,6 +167,28 @@
 
       <!-- Suppress errors caused by removing S.CM.C shim from inbox -->
       <SuppressNETStandardMissingFile Include="System.ComponentModel.Composition" />
+      <!-- !!! -->
+      <!-- NETCoreApp reference assemblies
+      ~\pkg\frameworkPackage.targets(181,5): error : Files 
+      'mscorlib;System.Data;System;System.Drawing;System.IO.Compression.FileSystem;System.Net;System.Numerics;System.Runtime.Serialization;System.ServiceModel.Web;System.Transactions;System.Web;System.Windows;System.Xml;System.Xml.Linq;System.Xml.Serialization' 
+       are part of 'NETStandard.Library' but missing from this package's reference files. -->
+      <SuppressNETStandardMissingFile Include="System.Core" />
+      <SuppressNETStandardMissingFile Include="mscorlib" />
+      <SuppressNETStandardMissingFile Include="System.Data" />
+      
+      <SuppressNETStandardMissingFile Include="System" />
+      <SuppressNETStandardMissingFile Include="System.Drawing" />
+      <SuppressNETStandardMissingFile Include="System.IO.Compression.FileSystem" />
+      <SuppressNETStandardMissingFile Include="System.Net" />
+      <SuppressNETStandardMissingFile Include="System.Numerics" />
+      <SuppressNETStandardMissingFile Include="System.Runtime.Serialization" />
+      <SuppressNETStandardMissingFile Include="System.ServiceModel.Web" />
+      <SuppressNETStandardMissingFile Include="System.Transactions" />
+      <SuppressNETStandardMissingFile Include="System.Web" />
+      <SuppressNETStandardMissingFile Include="System.Windows" />
+      <SuppressNETStandardMissingFile Include="System.Xml" />
+      <SuppressNETStandardMissingFile Include="System.Xml.Linq" />
+      <SuppressNETStandardMissingFile Include="System.Xml.Serialization" />
 
       <_NETStandardMissingFile Include="@(_NETStandardFile->'%(FileName)')" Exclude="@(ClosureFile->'%(FileName)')" />
       <_NETStandardMissingFileError Include="@(_NETStandardMissingFile)" Exclude="@(SuppressNETStandardMissingFile)" />

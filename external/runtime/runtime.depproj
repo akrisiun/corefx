@@ -1,6 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <RuntimeIdentifier>$(PackageRID)</RuntimeIdentifier>
+	<!-- <TargetFramework>netcoreapp3.0</TargetFramework>
+	<TargetFrameworkMoniker>.NETCoreApp,v3.0</TargetFrameworkMoniker>
+	<Configurations>netcoreapp-Windows_NT-Debug</Configurations>
+	-->
+	<RunApiCompat>false</RunApiCompat>
+	
     <NoWarn>$(NoWarn);NU1603;NU1605</NoWarn>
     <SwapNativeForIL Condition="'$(SwapNativeForIL)' == '' AND ('$(ConfigurationGroup)' == 'Debug' OR '$(Coverage)' == 'true')">true</SwapNativeForIL>
     <!-- uap10.0.16299 is missing IL -->
@@ -92,8 +98,12 @@
     </ItemGroup>
     <PropertyGroup>
       <_CoreLibFilePath>%(_CoreLibFile.FullPath)</_CoreLibFilePath>
-      <_CoreLibPackagePath>$(_CoreLibFilePath.SubString(0, $(_CoreLibFilePath.IndexOf('runtimes'))))</_CoreLibPackagePath>
+      <_CoreLibPackagePath
+		Condition="$(_CoreLibFilePath.Length) > 0"
+		>$(_CoreLibFilePath.SubString(0, $(_CoreLibFilePath.IndexOf('runtimes'))))</_CoreLibPackagePath>
     </PropertyGroup>
+	
+	<Message Importance="High" Text="~  _CoreLibPackagePath=$(_CoreLibPackagePath)" />
     <Error Condition="'$(_CoreLibPackagePath)' == '' OR !Exists('$(_CoreLibPackagePath)')" 
            Text="Could not locate the CoreClr package." />
   </Target>

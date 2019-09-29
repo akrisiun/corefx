@@ -194,18 +194,13 @@
       <Imports>net472</Imports>
       <CompatibleWith>netstandard</CompatibleWith>
     </TargetGroups>
-    <TargetGroups Include="win8">
+<!--    <TargetGroups Include="win8">
       <TargetFramework>win8</TargetFramework>
       <TargetFrameworkIdentifier>Windows</TargetFrameworkIdentifier>
       <TargetFrameworkIdentifier>v8.0</TargetFrameworkIdentifier>
       <CompatibleWith>netstandard1.1</CompatibleWith>
-    </TargetGroups>
-    <TargetGroups Include="wpa81">
-      <TargetFramework>wpa81</TargetFramework>
-      <TargetFrameworkIdentifier>WindowsPhoneApp</TargetFrameworkIdentifier>
-      <TargetFrameworkIdentifier>v8.1</TargetFrameworkIdentifier>
-      <CompatibleWith>netstandard1.2</CompatibleWith>
-    </TargetGroups>
+    </TargetGroups> -->
+	
     <TargetGroups Include="package">
       <!-- this targetgroup is not considered compatible with any other targetgroup so it should only
            build when specified directly or BuildAllConfigurations is set to True.  -->

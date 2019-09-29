@@ -1,3 +1,15 @@
+## Fork + problems
+
+Version 3.0.100 of the .NET Core SDK requires at least version 16.3.0 of MSBuild. 
+The current available version of MSBuild is 16.1.68.42340. 
+Change the .NET Core SDK specified in global.json to an older version that requires the MSBuild version currently available.
+
+Source:
+```
+https://github.com/dotnet/corefx -b  release/3.0
+https://github.com/dotnet/coreclr -b release/3.0
+```
+
 # .NET Core Libraries (CoreFX)
 
 [![Build Status](https://dev.azure.com/dnceng/internal/_apis/build/status/dotnet/corefx/corefx-official?branchName=master)](https://dev.azure.com/dnceng/internal/_build/latest?definitionId=283&branchName=master)

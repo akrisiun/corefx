@@ -1,0 +1,2 @@
+ dotnet build -o bin/
+ 

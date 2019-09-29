@@ -10,6 +10,7 @@
     <LibBinDir>$(NETCoreAppPackageRuntimePath)</LibBinDir>
 
     <IsFrameworkPackage>true</IsFrameworkPackage>
+    <SkipValidatePackage>false</SkipValidatePackage>
 
     <!-- Private packages need symbols -->
     <IncludeSymbolsInPackage Condition="'$(IncludeSymbolsInPackage)' == ''">true</IncludeSymbolsInPackage>
@@ -19,7 +20,8 @@
     <IgnoredReference Include="System.Private.CoreLib" />
     <IgnoredReference Include="Windows" />
 
-    <IgnoredReference Condition="$(PackageTargetRuntime.EndsWith('-aot'))" Include="System.Private.Interop" />
+    <IgnoredReference Condition="$(PackageTargetRuntime.EndsWith('-aot'))" 
+	     Include="System.Private.Interop" />
     <!-- Exclude shims from the closure verification -->
     <ExcludeFromClosure Include="mscorlib" />
     <ExcludeFromClosure Include="System" />
@@ -57,8 +59,33 @@
     <!-- Permit missing Inbox since this used to be a shim and it is now OOB -->
     <ValidatePackageSuppression Include="PermitMissingInbox">
         <Value>
-            System.ComponentModel.Composition;
-        </Value>
+			System.ComponentModel.Composition;
+        </Value> 
+        <!--
+			Microsoft.VisualBasic;
+			Microsoft.VisualBasic.Core;
+			mscorlib;
+			System;
+			System.ComponentModel.DataAnnotations;
+			System.Configuration;
+			System.Core;
+			System.Data;
+			System.Drawing;
+			System.IO.Compression.FileSystem;
+			System.Net;
+			System.Numerics;
+			System.Runtime.Serialization;
+			System.Security;
+			System.ServiceModel.Web;
+			System.ServiceProcess;
+			System.Transactions;
+			System.Web;
+			System.Windows;
+			System.Xml;
+			System.Xml.Linq;
+			System.Xml.Serialization;
+			WindowsBase;
+        </Value> -->
     </ValidatePackageSuppression>
   </ItemGroup>
 

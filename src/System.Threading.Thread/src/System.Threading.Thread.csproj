@@ -1,11 +1,21 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <AssemblyName>System.Threading.Thread</AssemblyName>
+	<TargetFramework>netcoreapp3.0</TargetFramework>
+	<RunApiCompat>false</RunApiCompat>
+	
+	<!-- <SkipDeriveTargetFrameworks>true</SkipDeriveTargetFrameworks>
+	<BuildAnkh>true</BuildAnkh>
+	<BinPlaceRuntime>true</BinPlaceRuntime>
+	issue
+	~\.nuget\packages\microsoft.dotnet.build.tasks.configuration\1.0.0-beta.19474.3\build\BinPlace.targets
+	-->
+	
     <OutputType>Library</OutputType>
     <IsPartialFacadeAssembly>true</IsPartialFacadeAssembly>
     <ProjectGuid>{06197EED-FF48-43F3-976D-463839D43E8C}</ProjectGuid>
     <Nullable>enable</Nullable>
-    <Configurations>netcoreapp-Unix-Debug;netcoreapp-Unix-Release;netcoreapp-Windows_NT-Debug;netcoreapp-Windows_NT-Release;uap-Windows_NT-Debug;uap-Windows_NT-Release</Configurations>
+    <Configurations>netcoreapp-Unix-Debug;netcoreapp-Windows_NT-Debug</Configurations>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="System\Threading\ThreadExceptionEventArgs.cs" />

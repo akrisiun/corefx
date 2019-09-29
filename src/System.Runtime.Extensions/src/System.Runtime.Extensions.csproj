@@ -1,12 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <ProjectGuid>{845D2B72-D8A4-42E5-9BE9-17639EC4FC1A}</ProjectGuid>
+	
+	<SkipDeriveTargetFrameworks>false</SkipDeriveTargetFrameworks>  
+	<BuildAnkh>true</BuildAnkh>
+	<RunApiCompat>false</RunApiCompat>
+	
     <AssemblyName>System.Runtime.Extensions</AssemblyName>
     <OutputType>Library</OutputType>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <IsPartialFacadeAssembly>true</IsPartialFacadeAssembly>
     <IncludeDllSafeSearchPathAttribute>true</IncludeDllSafeSearchPathAttribute>
-    <Configurations>netcoreapp-Unix-Debug;netcoreapp-Unix-Release;netcoreapp-Windows_NT-Debug;netcoreapp-Windows_NT-Release;uap-Windows_NT-Debug;uap-Windows_NT-Release</Configurations>
+    <Configurations>netcoreapp-Unix-Debug;netcoreapp-Windows_NT-Debug</Configurations>
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>

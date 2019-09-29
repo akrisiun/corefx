@@ -4,6 +4,6 @@
     <AssemblyVersion>4.2.1.0</AssemblyVersion>
     <StrongNameKeyId>Microsoft</StrongNameKeyId>
     <IsNETCoreApp>true</IsNETCoreApp>
-    <IsUAP>true</IsUAP>
+    <IsUAP>false</IsUAP>
   </PropertyGroup>
 </Project>

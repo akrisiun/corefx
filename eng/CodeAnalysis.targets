@@ -2,6 +2,7 @@
   <PropertyGroup>
     <!-- Need to keep in sync with Tools.props file. -->
     <AnalyzerPropsFile>$(ToolSetCommonDirectory)Tools.Analyzers.props</AnalyzerPropsFile>
+    <EnableAnalyzers>false</EnableAnalyzers>
   </PropertyGroup>
 
   <Import Condition="Exists($(AnalyzerPropsFile)) AND '$(EnableAnalyzers)' == 'true'" Project="$(AnalyzerPropsFile)" />
