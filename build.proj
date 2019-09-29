@@ -28,7 +28,7 @@
 
   <Target Name="Test">
     <ItemGroup>
-      <_TestProjects Include="$(SourceDir)apicompat/apicompat.proj" />
+      <!-- <_TestProjects Include="$(SourceDir)apicompat/apicompat.proj" /> -->
     </ItemGroup>
 
     <MSBuild Projects="@(_TestProjects)" />
