@@ -1,58 +1,94 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), Directory.Build.props))\Directory.Build.props" />
+<Project DefaultTargets="Build">
 
-   <PropertyGroup>
-    <BuildRestore Condition="'$(BuildRestore)'==''">true</BuildRestore>
-    <BuildManaged Condition="'$(BuildManaged)'==''">true</BuildManaged>
-    <BuildTests Condition="'$(BuildTests)'==''">true</BuildTests>
-    <BuildPackages Condition="'$(BuildPackages)'==''">true</BuildPackages>
-    <SignPackages Condition="'$(SignPackages)'==''">false</SignPackages>
+  <Import Project="Directory.Build.props" />
 
-    <BuildDependsOn Condition="'$(BuildRestore)'=='true' and '$(DotNetBuildFromSource)'!='true'">$(BuildDependsOn);Restore</BuildDependsOn>
-    <BuildDependsOn Condition="'$(BuildManaged)'=='true'">$(BuildDependsOn);BuildManaged</BuildDependsOn>
-    <BuildDependsOn Condition="'$(BuildTests)'=='true' and '$(DotNetBuildFromSource)'!='true'">$(BuildDependsOn);Test</BuildDependsOn>
-    <BuildDependsOn Condition="'$(BuildPackages)'=='true'">$(BuildDependsOn);Pack</BuildDependsOn>
-    <BuildDependsOn Condition="'$(SignPackages)'=='true'">$(BuildDependsOn);SignPackages</BuildDependsOn>
+  <PropertyGroup>
+    <BuildNative Condition="'$(BuildNative)' == '' and '$(DirectoryToBuild)' == ''">true</BuildNative>
+    <BuildManaged Condition="'$(BuildManaged)' == ''">true</BuildManaged>
+    <BuildPackages Condition="'$(BuildPackages)' == '' and '$(DirectoryToBuild)' == ''">true</BuildPackages>
+
+    <BuildDependsOn Condition="'$(BuildNative)' == 'true'">$(BuildDependsOn);BuildNative</BuildDependsOn>
+    <BuildDependsOn Condition="'$(BuildManaged)' == 'true'">$(BuildDependsOn);BuildManaged</BuildDependsOn>
+    <BuildDependsOn Condition="'$(BuildPackages)' == 'true'">$(BuildDependsOn);Pack</BuildDependsOn>
+
+    <!-- Explicitly set Configuration based on BuildConfiguration for the root projects -->
+    <ProjectProperties>Configuration=$(BuildConfiguration)</ProjectProperties>
   </PropertyGroup>
 
-  <Target Name="Restore"/>
+  <Import Project="Directory.Build.targets" />
+
+  <Target Name="Restore" DependsOnTargets="GenerateConfigurationProps">
+    <ItemGroup Condition="'$(DirectoryToBuild)' == ''">
+      <_RestoreProjects Include="$(RepositoryEngineeringDir)restore\dirs.proj" Build="true" />
+    </ItemGroup>
+    
+    <ItemGroup Condition="'$(DotNetBuildFromSource)' != 'true'">
+      <_RestoreProjects Include="$(SourceDir)tests.proj" Build="false" />
+    </ItemGroup>
+
+    <MSBuild Projects="@(_RestoreProjects)" Targets="Restore" Properties="$(ProjectProperties)" />
+    <MSBuild Projects="@(_RestoreProjects)" Condition="'%(Build)' != 'false'" Properties="$(ProjectProperties)" />
+  </Target>
+
+  <Target Name="BuildNative">
+    <ItemGroup>
+      <_BuildNativeProjects Include="src\Native\build-native.proj" />
+    </ItemGroup>
+
+    <MSBuild Projects="@(_BuildNativeProjects)" Properties="$(ProjectProperties)" />
+  </Target>
 
   <Target Name="BuildManaged">
     <ItemGroup>
-      <_BuildMangedProjects Include="$(SourceDir)src.builds" />
+      <_BuildMangedProjects Include="src\dirs.proj" />
     </ItemGroup>
 
-    <MSBuild Projects="@(_BuildMangedProjects)" />
+    <MSBuild Projects="@(_BuildMangedProjects)" Properties="$(ProjectProperties)" />
+  </Target>
+
+  <Target Name="BuildTests">
+    <ItemGroup>
+      <_TestProjects Include="src\tests.proj" />
+    </ItemGroup>
+
+    <MSBuild Projects="@(_TestProjects)"
+             Targets="Build"
+             Properties="$(ProjectProperties)" />
   </Target>
 
   <Target Name="Test">
     <ItemGroup>
-      <_TestProjects Include="$(SourceDir)apicompat/apicompat.proj" />
+      <_TestProjects Include="src\tests.proj" />
     </ItemGroup>
 
-    <MSBuild Projects="@(_TestProjects)" />
+    <MSBuild Projects="@(_TestProjects)"
+             Targets="Test"
+             Properties="$(ProjectProperties)" />
   </Target>
 
   <Target Name="Pack">
     <ItemGroup>
-      <_PackProjects Include="$(SourceDir)packages.builds" Condition="'$(BuildPackages)'=='true'" />
+      <_PackProjects Include="src\packages.builds" />
     </ItemGroup>
 
-    <MSBuild Projects="@(_PackProjects)" />
+    <MSBuild Projects="@(_PackProjects)" Properties="$(ProjectProperties)" />
   </Target>
 
   <Target Name="Build" DependsOnTargets="$(BuildDependsOn)" />
-  <Target Name="Clean">
-    <RemoveDir Directories="$(ArtifactsObjDir)" />
-    <RemoveDir Directories="$(ArtifactsBinDir)" />
-    <RemoveDir Directories="$(ArtifactsPackagesDir)" />
-  </Target>
 
   <Target Name="Rebuild" DependsOnTargets="Clean;Build" />
 
-  <!-- Define an empty Execute target for Arcade's build.proj to find -->
-  <Target Name="Execute" />
+  <!-- set up inputs for UpdateVSConfigurations in a target to avoid globbing all the time -->
+  <Target Name="_setProjectsToUpdate" BeforeTargets="UpdateVSConfigurations">
+    <ItemGroup>
+      <ProjectsToUpdate Include="$(MSBuildThisFileDirectory)src/**/*.*csproj" 
+                        Exclude="$(MSBuildThisFileDirectory)src/shims/**/*.*csproj"/>
+      <ProjectsToUpdate Include="$(MSBuildThisFileDirectory)src/**/*.*ilproj" />
+      <ProjectsToUpdate Include="$(MSBuildThisFileDirectory)src/**/*.*vbproj" />
+      <_solutionsToUpdateFiles Include="$(MSBuildThisFileDirectory)src/*/Directory.Build.props" />
+      <SolutionsToUpdate Include="@(_solutionsToUpdateFiles->'%(RootDir)%(Directory)')" Exclude="@(_solutionsToExcludeFromUpdate)" />
+    </ItemGroup>
+  </Target>
 
+  <Import Project="$(RepositoryEngineeringDir)restore\uap-tools.targets" />
 </Project>
-

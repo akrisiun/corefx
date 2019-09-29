@@ -86,6 +86,9 @@
     <PropertyGroup>
       <CoreCLRPDBOverridePath Condition="'$(CoreCLRPDBOverridePath)' == '' and Exists('$(CoreCLROverridePath)/PDB')">$(CoreCLROverridePath)/PDB</CoreCLRPDBOverridePath>
     </PropertyGroup>
+    
+    <Message Importance="High" Text="|GetCoreLibPackagePath | _CoreLibFile %(_CoreLibFile.FullPath)" />
+    
     <ItemGroup>
       <CoreCLRFiles Include="$(CoreCLROverridePath)/*.*" />
       <CoreCLRFiles Condition="'$(CoreCLRPDBOverridePath)' != ''" Include="$(CoreCLRPDBOverridePath)/*.pdb;$(CoreCLRPDBOverridePath)/*.dbg" />

@@ -280,3 +280,5 @@ config.ps1
 src/.nuget/
 src/apicompat/
 src/coreclr/
+.dotnet*/
+launchSettings.json

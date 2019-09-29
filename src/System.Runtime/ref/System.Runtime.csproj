@@ -1,36 +1,83 @@
-﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="Current">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-  
+    <TargetFrameworks>netstandard2.0;coreapp3.0</TargetFrameworks>
+    <EnableSourceLink>false</EnableSourceLink>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <!-- It is a core assembly because it defines System.Object so we need to pass RuntimeMetadataVersion to the compiler -->
     <RuntimeMetadataVersion>v4.0.30319</RuntimeMetadataVersion>
-    <TargetFrameworks>netcoreapp3.0;</TargetFrameworks>
-    <DotNetBuildFromSource>true</DotNetBuildFromSource>
-    <!-- Microsoft.Net.Compilers.Toolset -->
-    <MicrosoftNetCompilersToolsetVersion>3.3.0</MicrosoftNetCompilersToolsetVersion>
-    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
-
     <ProjectGuid>{ADBCF120-3454-4A3C-9D1D-AC4293E795D6}</ProjectGuid>
     <!-- disable warnings about obsolete APIs -->
     <NoWarn>$(NoWarn);0809;0618</NoWarn>
-    <Configurations>netcoreapp-Debug</Configurations>
-
+    <Configurations>netcoreapp-Debug;netcoreapp-Release;uap-Debug;uap-Release</Configurations>
     <Nullable>enable</Nullable>
-    <!-- <Nullable>disable</Nullable>
-    -->
-    
-    <FileUpgradeFlags>40</FileUpgradeFlags>
-    <OldToolsVersion>2.0</OldToolsVersion>
-    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
+
+<!--
+~\.nuget\packages\microsoft.dotnet.build.tasks.configuration\1.0.0-beta.19456.10\build\BinPlace.targets
+-->
+  <Target Name="GetBinPlaceConfiguration" DependsOnTargets="GetBuildConfigurations">
+  
+    <Message Importance="High" Text="netcoreapp3.0 &gt; $(Configurations) $(TargetName).dll" />
+    <Message Importance="High" Text="@Property @(Property)" />
+	<Message Importance="Low" Text="(PropertyValue) @(PropertyValue)" />
+	
+	<Message Importance="Low" Text="BuildConfiguration=$(Configuration)" />
+    <Message Importance="High" Text="Configurations=@(BinPlaceConfiguration)" />
+	
+<!--
+  netcoreapp3.0 > netcoreapp-Debug;netcoreapp-Release;uap-Debug;uap-Release System.Runtime.dll
+  @Property OSGroup;TargetGroup;ConfigurationGroup;ArchGroup
+  Configurations=netcoreapp-Windows_NT;netcoreapp-Windows_NT;netcoreapp-Windows_NT;netstandard;netstandard2.1;netcoreapp2.0
+  System.Runtime -> E:\Beta\dotnet\corefx-blank2\artifacts\bin\ref\System.Runtime\netcoreapp-Debug\System.Runtime.dll
+-->
+
+    <NormalizeConfigurations Properties="@(Property)"
+                             PropertyValues="@(PropertyValue)"
+                             BuildConfiguration="$(Configuration)"
+                             Configurations="@(BinPlaceConfiguration)">
+      <Output TaskParameter="NormalizedConfigurations" ItemName="_normalizedBinPlaceConfiguration" />
+    </NormalizeConfigurations>
+    
+    <!-- find which, if any, build configuration of this project is best
+         for each binplace configuration  -->
+    <FindBestConfigurations Properties="@(Property)"
+                            PropertyValues="@(PropertyValue)"
+                            SupportedConfigurations="$(_AllBuildConfigurations)"
+                            Configurations="@(_normalizedBinPlaceConfiguration)">
+      <Output TaskParameter="BestConfigurations" ItemName="_bestBinlaceConfigurations" />
+    </FindBestConfigurations>
+
+    <ItemGroup>
+      <_currentBinPlaceConfigurations Include="@(_bestBinlaceConfigurations)" Condition="'%(Identity)' == '$(Configuration)'" />
+
+      <BinPlaceDir Condition="'$(BinPlaceTest)' == 'true'" Include="@(_currentBinPlaceConfigurations->'%(TestPath)')" />
+      <BinPlaceDir Condition="'$(BinPlaceRuntime)' == 'true'" Include="@(_currentBinPlaceConfigurations->'%(RuntimePath)')" />
+      <BinPlaceDir Condition="'$(BinPlaceRef)' == 'true'" Include="@(_currentBinPlaceConfigurations->'%(RefPath)')" />
+
+      <PackageFileDir Condition="'$(BinPlaceRuntime)' == 'true'" Include="@(_currentBinPlaceConfigurations->'%(PackageFileRuntimePath)')">
+        <SaveItemName Condition="'%(_currentBinPlaceConfigurations.SaveItemName)' == ''">LibFile</SaveItemName>
+      </PackageFileDir>
+      <PackageFileDir Condition="'$(BinPlaceRef)' == 'true'" Include="@(_currentBinPlaceConfigurations->'%(PackageFileRefPath)')">
+        <SaveItemName Condition="'%(_currentBinPlaceConfigurations.SaveItemName)' == ''">RefFile</SaveItemName>
+      </PackageFileDir>
+
+      <!-- permit BinplaceConfigurations to define SetProperties metadata,
+           set those properties when BinplaceConfiguration is active -->
+      <_binplacePropertyTuples Include="%(_currentBinPlaceConfigurations.SetProperties)" />
+
+      <_binplaceSetProperty Condition="'%(_binplacePropertyTuples.Identity)' != ''"
+                            Include="$([System.String]::new('%(_binplacePropertyTuples.Identity)').Split('=')[0])">
+        <Value>$([System.String]::new('%(_binplacePropertyTuples.Identity)').Split('=')[1])</Value>
+      </_binplaceSetProperty>
+    </ItemGroup>
+
+    <CreateProperty Value="%(_binplaceSetProperty.Value)" Condition="'@(_binplaceSetProperty)' != ''" >
+      <Output TaskParameter="Value" PropertyName="%(_binplaceSetProperty.Identity)" />
+    </CreateProperty>
+  </Target>
+  
   <ItemGroup>
     <Compile Include="System.Runtime.cs" />
     <Compile Include="System.Runtime.Manual.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Net.Compilers.Toolset" Version="3.3.0">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
   </ItemGroup>
 </Project>

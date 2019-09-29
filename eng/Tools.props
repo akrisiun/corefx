@@ -4,11 +4,6 @@
     <Language>C#</Language>
     <!-- Need to keep in sync with CodeAnalysis.targets file. -->
     <AnalyzerPropsFile>$(ArtifactsToolsetDir)Common\Tools.Analyzers.props</AnalyzerPropsFile>
-
-    <DotNetBuildFromSource>true</DotNetBuildFromSource>
-    <!-- Microsoft.Net.Compilers.Toolset -->
-    <MicrosoftNetCompilersToolsetVersion>3.3.0</MicrosoftNetCompilersToolsetVersion>
-	
   </PropertyGroup>
 
   <Import Project="Analyzers.props" Condition="'$(DotNetBuildFromSource)' != 'true'" />
@@ -61,8 +56,6 @@
 
   <Import Project="$(RepositoryEngineeringDir)restore\docs.targets" Condition="'$(DotNetBuildFromSource)' != 'true'" />
   <Import Project="$(RepositoryEngineeringDir)restore\optimizationData.targets" Condition="'$(DotNetBuildFromSource)' != 'true' and '$(EnableNgenOptimization)' == 'true'" />
-  <!--
   <Import Project="$(RepositoryEngineeringDir)restore\illink.targets" Condition="'$(ILLinkTrimAssembly)' != 'false'" />
-  -->
 
 </Project>

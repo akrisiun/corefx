@@ -13,4 +13,5 @@ while [[ -h $source ]]; do
 done
 
 scriptroot="$( cd -P "$( dirname "$source" )" && pwd )"
-"$scriptroot/eng/common/build.sh" --build --restore /warnAsMessage:NU1702 $@
+"$scriptroot/eng/build.sh" $@
+exit $?

@@ -20,8 +20,6 @@ namespace System
         /// <returns> Returns the process exit code (0 typically means it is successful)</returns>
         public static int RunAsSudo(string commandLine)
         {
-            // ankr
-            /*
             ProcessStartInfo startInfo = new ProcessStartInfo()
             {
                 FileName = "sudo",
@@ -32,8 +30,7 @@ namespace System
             {
                 Assert.True(process.WaitForExit(30000));
                 return process.ExitCode;
-            } */
-            return -1;
+            }
         }
 
         public static unsafe bool IsProcessElevated()
@@ -45,20 +42,15 @@ namespace System
             }
 
             IntPtr processHandle = Interop.Kernel32.GetCurrentProcess();
-           
-            // SafeAccessTokenHandle token;
-            // ankr:
-            /*
+            SafeAccessTokenHandle token;
             if (!Interop.Advapi32.OpenProcessToken(processHandle, TokenAccessLevels.Read, out token))
             {
                 throw new Win32Exception(Marshal.GetLastWin32Error(), "Open process token failed");
-            } */
+            }
 
-           // using (token)
+            using (token)
             {
-                // Interop.Advapi32.TOKEN_ELEVATION elevation = new Interop.Advapi32.TOKEN_ELEVATION();
-                // ankr:
-                    /*
+                Interop.Advapi32.TOKEN_ELEVATION elevation = new Interop.Advapi32.TOKEN_ELEVATION();
                 uint ignore;
                 if (!Interop.Advapi32.GetTokenInformation(
                     token,
@@ -70,8 +62,6 @@ namespace System
                     throw new Win32Exception(Marshal.GetLastWin32Error(), "Get token information failed");
                 }
                 return elevation.TokenIsElevated != Interop.BOOL.FALSE;
-                */
-                return false;
             }
         }
     }

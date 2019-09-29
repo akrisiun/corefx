@@ -141,17 +141,14 @@ namespace System
             string key = @"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion";
             string value = "";
 
-// ankr:
-                    /*
             try
             {
                 value = (string)Registry.GetValue(key, "InstallationType", defaultValue: "");
             }
-            catch (Exception e) when (e is SecurityException || e is InvalidCastException || e is PlatformNotSupportedException 
-            )
+            catch (Exception e) when (e is SecurityException || e is InvalidCastException || e is PlatformNotSupportedException /* UAP */)
             {
             }
-*/
+
             return value;
         }
 

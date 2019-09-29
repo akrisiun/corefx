@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
+  <metadata minClientVersion="3.0">
+    <id>Microsoft.TargetingPack.NETFramework.v4.6.1</id>
+    <version>1.0.1</version>
+    <title>Microsoft.TargetingPack.NETFramework.v4.6.1</title>
+    <authors>Microsoft</authors>
+    <owners>microsoft,dotnetframework</owners>
+    <licenseUrl>http://go.microsoft.com/fwlink/?LinkId=329770</licenseUrl>
+    <iconUrl>http://go.microsoft.com/fwlink/?LinkID=288859</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Contains the .NET Framework v4.6.1 targeting pack. \r\n TFS ID: 1570072, GitHub SHA: https://github.com/dotnet/corefx/tree/e0e94b1d4ac854b0dd1ef3725d8492bcfa0229c9</description>
+    <copyright>© Microsoft Corporation.  All rights reserved.</copyright>
+  </metadata>
+</package>
