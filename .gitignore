@@ -268,11 +268,12 @@ Session.vim
 *~
 
 # Visual Studio Code
-.vscode/
-
+# .vscode/
 # Private test configuration and binaries.
-config.ps1
+# config.ps1
 **/IISApplications
 
 # VS debug support files
 launchSettings.json
+src/**/srcWeb/
+*.exe

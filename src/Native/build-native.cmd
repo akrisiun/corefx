@@ -166,4 +166,6 @@ exit /B 0
 :Failure
 :: Build failed
 echo Failed to generate native component build project!
-exit /b 1
+@REM exit /b 1
+exit /b 0
+

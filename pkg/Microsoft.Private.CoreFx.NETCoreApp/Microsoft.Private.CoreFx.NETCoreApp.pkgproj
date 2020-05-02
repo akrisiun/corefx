@@ -58,6 +58,8 @@
     <ValidatePackageSuppression Include="PermitMissingInbox">
         <Value>
             System.ComponentModel.Composition;
+			System.AppContext;
+			System.Data.SqlClient;
         </Value>
     </ValidatePackageSuppression>
     <!-- Permit inbox revsion of assemblies that are part of shared framework but also ship as packages. This will
@@ -66,6 +68,7 @@
     <ValidatePackageSuppression Include="PermitInbox">
       <Value>
         System.Text.Json;
+		System.AppContext;
       </Value>
     </ValidatePackageSuppression>
   </ItemGroup>

@@ -541,6 +541,7 @@ function MSBuild() {
     $args += "/logger:$path"
   }
 
+  echo "tools.ps1 MSBuild-Core @args"
   MSBuild-Core @args
 }
 
@@ -579,6 +580,7 @@ function MSBuild-Core() {
     }
   }
 
+  echo "tools.ps1 Exec-Process $buildTool.Path $cmdArgs"
   $exitCode = Exec-Process $buildTool.Path $cmdArgs
 
   if ($exitCode -ne 0) {
