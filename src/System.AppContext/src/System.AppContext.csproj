@@ -2,6 +2,12 @@
   <PropertyGroup>
     <AssemblyName>System.AppContext</AssemblyName>
     <ProjectGuid>{5522BAFC-E2FF-4896-993A-401DDEDFD85F}</ProjectGuid>
+	
+    <PackageVersion>4.8.0-beta3</PackageVersion>
+    <AssemblyVersion>4.8.0.0</AssemblyVersion>
+	<IsPackable>true</IsPackable>
+	<IsUAPAssembly>false</IsUAPAssembly>
+	
     <ClsCompliant>true</ClsCompliant>
     <IsPartialFacadeAssembly>true</IsPartialFacadeAssembly>
     <Configurations>netcoreapp-Unix-Debug;netcoreapp-Unix-Release;netcoreapp-Windows_NT-Debug;netcoreapp-Windows_NT-Release;uap-Windows_NT-Debug;uap-Windows_NT-Release</Configurations>

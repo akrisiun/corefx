@@ -135,5 +135,6 @@ foreach ($argument in $PSBoundParameters.Keys)
   }
 }
 
+echo " `"$PSScriptRoot/common/build.ps1`" $arguments"
 Invoke-Expression "& `"$PSScriptRoot/common/build.ps1`" $arguments"
 exit $lastExitCode
